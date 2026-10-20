@@ -1,0 +1,142 @@
+<mxfile host="Electron" agent="DevCraft UML Generator">
+  <diagram id="seq_validation" name="Sequence - AST Validation &amp; Progression">
+    <mxGraphModel dx="1414" dy="1009" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="seq1_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" value="Sequence Diagram: Real-Time AST Validation &amp; Progressive Step Unlocking" vertex="1">
+          <mxGeometry height="30" width="600" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_student" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="Learner (Student)" vertex="1">
+          <mxGeometry height="800" width="110" x="80" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_ui" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":TriPanelWorkspace" vertex="1">
+          <mxGeometry height="800" width="120" x="240" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_monaco" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":MonacoEditorWrapper" vertex="1">
+          <mxGeometry height="800" width="140" x="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_store" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":IDEStateManager" vertex="1">
+          <mxGeometry height="800" width="120" x="580" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_api" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":ASTValidationController" vertex="1">
+          <mxGeometry height="800" width="150" x="740" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_sandbox" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":JestSandboxRunner" vertex="1">
+          <mxGeometry height="800" width="130" x="930" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_db" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":MongoDB(learningProgress)" vertex="1">
+          <mxGeometry height="800" width="160" x="1100" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="seq_msg_1" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="typeCode(codeSnippet)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="135" as="sourcePoint" />
+            <mxPoint x="470" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_2" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="updateCodeBuffer(stepId, codeSnippet)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="165" as="sourcePoint" />
+            <mxPoint x="640" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_3" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="click(&#39;Run &amp; Validate&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="195" as="sourcePoint" />
+            <mxPoint x="300" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_4" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="triggerValidation(stepId)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="225" as="sourcePoint" />
+            <mxPoint x="640" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_5" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="POST /api/workspace/validate { stepId, code, userId }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="255" as="sourcePoint" />
+            <mxPoint x="815" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_6" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" value="parseToAST(code) &amp; verifyRequiredNodes()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="865" y="285" />
+              <mxPoint x="865" y="315" />
+            </Array>
+            <mxPoint x="815" y="285" as="sourcePoint" />
+            <mxPoint x="815" y="315" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_7" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="executeSilentTests(code, stepTestSpecs)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="345" as="sourcePoint" />
+            <mxPoint x="995" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_8" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" value="runJestTestSuites()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1045" y="375" />
+              <mxPoint x="1045" y="405" />
+            </Array>
+            <mxPoint x="995" y="375" as="sourcePoint" />
+            <mxPoint x="995" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_9" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" value="testReport { passed: true, assertions: 4/4 }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="995" y="435" as="sourcePoint" />
+            <mxPoint x="815" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_10" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="updateOne({ userId, stepId }, { status: &#39;COMPLETED&#39; })">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="465" as="sourcePoint" />
+            <mxPoint x="1180" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_11" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="acknowledgeUpdate(writeResult)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180" y="495" as="sourcePoint" />
+            <mxPoint x="815" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_12" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" value="200 OK { success: true, nextStepUnlocked: 2, xp: +50 }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="525" as="sourcePoint" />
+            <mxPoint x="640" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_13" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="updateStepStatus(nextStepId, &#39;UNLOCKED&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="555" as="sourcePoint" />
+            <mxPoint x="300" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_14" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="triggerCelebrationFeedback()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="585" as="sourcePoint" />
+            <mxPoint x="300" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_15" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" value="renderConfetti() &amp; compileLivePreview()">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="615" />
+              <mxPoint x="350" y="645" />
+            </Array>
+            <mxPoint x="300" y="615" as="sourcePoint" />
+            <mxPoint x="300" y="645" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_16" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" value="displaySuccessToast() &amp; unlockStepNavigation()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="675" as="sourcePoint" />
+            <mxPoint x="135" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,155 @@
+<mxfile host="Electron">
+  <diagram id="seq_meme_check" name="Sequence - Concept Check &amp; Meme Trigger">
+    <mxGraphModel dx="1664" dy="1187" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="919" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="seq2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" value="Sequence Diagram: Contextual Concept Checkpoint &amp; Anti-Boredom Meme Triggers" vertex="1">
+          <mxGeometry height="30" width="650" x="220" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s_student" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="Learner (Student)" vertex="1">
+          <mxGeometry height="800" width="110" x="80" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ui" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":TriPanelWorkspace" vertex="1">
+          <mxGeometry height="800" width="120" x="240" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_chk" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":ContextCheckManager" vertex="1">
+          <mxGeometry height="800" width="150" x="410" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_timer" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":SessionActivityMonitor" vertex="1">
+          <mxGeometry height="800" width="150" x="610" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_meme" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FCE7F3;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":MemePopupManager" vertex="1">
+          <mxGeometry height="800" width="140" x="810" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_db" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value=":MongoDB(PlatformContent)" vertex="1">
+          <mxGeometry height="800" width="170" x="1000" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="frame_partA" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;width=270;height=25;fillColor=none;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#1E40AF;" value="[Part A: Contextual Pre-requisite Concept Check]" vertex="1">
+          <mxGeometry height="280" width="1120" x="60" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2_m_1" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="selectStep(stepId = 3)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="150" as="sourcePoint" />
+            <mxPoint x="300" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_2" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="verifyPrerequisites(stepId = 3)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="180" as="sourcePoint" />
+            <mxPoint x="485" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_3" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="fetchStepMetadata(stepId)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="210" as="sourcePoint" />
+            <mxPoint x="1085" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_4" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="stepData { requiresConceptCheck: true, questionId: &#39;Q302&#39; }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1085" y="240" as="sourcePoint" />
+            <mxPoint x="485" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_5" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="lockEditorAndRenderModal(questionData)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="270" as="sourcePoint" />
+            <mxPoint x="300" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_6" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#2563EB;strokeWidth=1.2;fontSize=10;fontColor=#1E40AF;" value="displayConceptQuestionModal(&#39;Explain Express Middleware Flow&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="300" as="sourcePoint" />
+            <mxPoint x="135" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_7" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="submitConceptAnswer(&#39;Passes request to next handler&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="330" as="sourcePoint" />
+            <mxPoint x="300" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_8" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="validateAnswer(&#39;Q302&#39;, answer)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="360" as="sourcePoint" />
+            <mxPoint x="485" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_9" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" value="verificationResult { isCorrect: true, unlockEditor: true }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="380" as="sourcePoint" />
+            <mxPoint x="300" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="frame_partB" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;width=260;height=25;fillColor=none;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#9D174D;" value="[Part B: Anti-Boredom Meme Pop-Up Trigger]" vertex="1">
+          <mxGeometry height="390" width="1120" x="60" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2_m_10" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="continuousCodingSession()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="455" as="sourcePoint" />
+            <mxPoint x="300" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_11" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="recordActivity(keystrokes, timestamp)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="485" as="sourcePoint" />
+            <mxPoint x="685" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_12" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" value="evaluateThreshold(activeMinutes &gt;= 25 OR consecutiveErrors &gt;= 3)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="735" y="515" />
+              <mxPoint x="735" y="545" />
+            </Array>
+            <mxPoint x="685" y="515" as="sourcePoint" />
+            <mxPoint x="685" y="545" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_13" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="triggerMemeEvent(context: &#39;MERN_FATIGUE&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="575" as="sourcePoint" />
+            <mxPoint x="880" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_14" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="getRandomMeme({ tag: &#39;javascript_async&#39; })">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="605" as="sourcePoint" />
+            <mxPoint x="1085" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_15" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="return memeItem { url, caption, tags }">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1085" y="635" as="sourcePoint" />
+            <mxPoint x="880" y="635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_16" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="openMemeModal(memeItem)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="665" as="sourcePoint" />
+            <mxPoint x="300" y="665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_17" edge="1" parent="1" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#DB2777;strokeWidth=1.2;fontSize=10;fontColor=#9D174D;" value="displayFloatingMemeModal(&#39;Take a quick breather! ☕&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="695" as="sourcePoint" />
+            <mxPoint x="135" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_18" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="dismissMeme() / click(&#39;Got it, back to coding&#39;)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="735" as="sourcePoint" />
+            <mxPoint x="300" y="735" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_19" edge="1" parent="1" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" value="resetSessionTimer() &amp; clearConsecutiveErrors()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="765" as="sourcePoint" />
+            <mxPoint x="685" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
