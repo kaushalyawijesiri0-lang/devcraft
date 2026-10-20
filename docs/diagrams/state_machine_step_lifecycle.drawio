@@ -1,0 +1,109 @@
+<mxfile host="Electron" agent="DevCraft UML Generator">
+  <diagram id="state_machine_diag" name="State Machine - Step Lifecycle">
+    <mxGraphModel dx="2020" dy="1441" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sm_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" value="State Machine Diagram: Project Step Lifecycle &amp; IDE Session Statechart" vertex="1">
+          <mxGeometry height="30" width="650" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_start" parent="1" style="ellipse;html=1;shape=startState;fillColor=#0F172A;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="60" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="s_locked" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="STEP_LOCKED&lt;br/&gt;(Prerequisite steps unfinished)" vertex="1">
+          <mxGeometry height="70" width="190" x="50" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="s_concept_check" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="CONCEPT_CHECK_PENDING&lt;br/&gt;entry / Lock Monaco Editor&lt;br/&gt;do / Display Theory Question Modal" vertex="1">
+          <mxGeometry height="75" width="250" x="80" y="67.5" as="geometry" />
+        </mxCell>
+        <mxCell id="s_coding_active" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#EEF2FF;strokeColor=#4F46E5;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="CODING_ACTIVE&lt;br/&gt;entry / Unlock Monaco Editor&lt;br/&gt;do / Poll keystrokes &amp;amp; timer&lt;br/&gt;exit / Capture code snapshot" vertex="1">
+          <mxGeometry height="85" width="240" x="410" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ast_validation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="VALIDATING_AST&lt;br/&gt;do / Parse code into AST&lt;br/&gt;do / Check required syntax nodes" vertex="1">
+          <mxGeometry height="75" width="220" x="900" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="s_syntax_err" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="SYNTAX_ERROR_FLAGGED&lt;br/&gt;entry / Add Monaco red markers&lt;br/&gt;do / Show syntax hint tooltip" vertex="1">
+          <mxGeometry height="70" width="220" x="900" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_test_exec" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="UNIT_TESTS_RUNNING&lt;br/&gt;do / Execute Jest specs in sandbox" vertex="1">
+          <mxGeometry height="70" width="220" x="900" y="443" as="geometry" />
+        </mxCell>
+        <mxCell id="s_test_failed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="TESTS_FAILED&lt;br/&gt;entry / Render assertion failure&lt;br/&gt;do / Show contextual hint" vertex="1">
+          <mxGeometry height="70" width="220" x="575" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="s_step_completed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="STEP_COMPLETED&lt;br/&gt;entry / Confetti &amp;amp; XP dispatch&lt;br/&gt;entry / Persist progress in DB&lt;br/&gt;do / Unlock next step index" vertex="1">
+          <mxGeometry height="85" width="220" x="900" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="s_meme_popup" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FCE7F3;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" value="MEME_MODAL_ACTIVE&lt;br/&gt;entry / Pause IDE interactions&lt;br/&gt;do / Display context-aware meme&lt;br/&gt;exit / Reset session fatigue timer" vertex="1">
+          <mxGeometry height="80" width="220" x="70" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_end" parent="1" style="ellipse;html=1;shape=endState;fillColor=#0F172A;strokeColor=#16A34A;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="1030" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_0" edge="1" parent="1" source="s_locked" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;exitX=0;exitY=0.414;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.261;entryY=1.025;entryDx=0;entryDy=0;entryPerimeter=0;innerLoopWaypoints=1;" target="s_locked" value="Project Initialized">
+          <mxGeometry relative="1" x="0.2814" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="30" y="249" />
+              <mxPoint x="30" y="320" />
+              <mxPoint x="99.6" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sm_trans_1" edge="1" parent="1" source="s_locked" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="s_concept_check" value="[Prev step done &amp;amp; requiresCheck==true]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_2" edge="1" parent="1" source="s_locked" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="s_coding_active" value="[Prev step done &amp;amp; requiresCheck==false]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_3" edge="1" parent="1" source="s_concept_check" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="s_coding_active" value="[Answer is Correct] / Award Badge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_4" edge="1" parent="1" source="s_concept_check" style="endArrow=block;endFill=1;html=1;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;fontColor=#D97706;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;innerLoopWaypoints=1;" target="s_concept_check" value="[Answer Incorrect] / Display Hint">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="95" />
+              <mxPoint x="350" y="50" />
+              <mxPoint x="205" y="50" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sm_trans_5" edge="1" parent="1" source="s_coding_active" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" target="s_ast_validation" value="runValidation() / Clicked or Debounced">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_6" edge="1" parent="1" source="s_ast_validation" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;fontColor=#DC2626;edgeStyle=orthogonalEdgeStyle;curved=1;" target="s_syntax_err" value="[AST Parsing Fails]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_7" edge="1" parent="1" source="s_syntax_err" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=0;entryX=0.917;entryY=0.118;entryDx=0;entryDy=0;entryPerimeter=0;rounded=0;" target="s_coding_active" value="userEditsCode()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_8" edge="1" parent="1" source="s_ast_validation" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=1;" target="s_test_exec" value="[AST Nodes Validated]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_9" edge="1" parent="1" source="s_test_exec" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;fontColor=#DC2626;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="s_test_failed" value="[1 or more Assertions Fail]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_10" edge="1" parent="1" source="s_test_failed" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;entryX=0.823;entryY=0.966;entryDx=0;entryDy=0;entryPerimeter=0;" target="s_coding_active" value="userEditsCode()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_11" edge="1" parent="1" source="s_test_exec" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=1;" target="s_step_completed" value="[All Unit Tests Pass]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_12" edge="1" parent="1" source="s_step_completed" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="s_locked" value="[More steps remain in project]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_13" edge="1" parent="1" source="s_step_completed" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="sm_end" value="[Final step completed]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_14" edge="1" parent="1" source="s_coding_active" style="endArrow=block;endFill=1;html=1;strokeColor=#DB2777;strokeWidth=1.2;fontSize=10;fontColor=#DB2777;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="s_meme_popup" value="[Session &gt;= 25m OR Error Streak &gt;= 3]">
+          <mxGeometry relative="1" x="-0.4619" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sm_trans_15" edge="1" parent="1" source="s_meme_popup" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" target="s_coding_active" value="dismissMeme() / click &#39;Back to Code&#39;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

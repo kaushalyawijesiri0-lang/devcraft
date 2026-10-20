@@ -1,0 +1,147 @@
+<mxfile host="Electron">
+  <diagram id="activity_meme_check" name="Activity - Context Pop-up &amp; Meme Engine">
+    <mxGraphModel dx="1414" dy="1009" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="880" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="act2_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" value="Activity Diagram: Contextual Concept Check &amp; Anti-Boredom Meme Engine" vertex="1">
+          <mxGeometry height="30" width="600" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lane1" parent="1" style="shape=swimlane;startSize=30;fillColor=#F8FAFC;strokeColor=#3B82F6;strokeWidth=2;fontStyle=1;fontSize=13;fontColor=#1E40AF;" value="Flow A: Contextual Pop-Up Concept Check (Gatekeeper)" vertex="1">
+          <mxGeometry height="740" width="460" x="60" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="start_a" parent="lane1" style="ellipse;html=1;shape=startState;fillColor=#0F172A;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="215" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="a_step_sel" parent="lane1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#1E3A8A;" value="Student navigates to next project step" vertex="1">
+          <mxGeometry height="45" width="180" x="140" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="d_check_req" parent="lane1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#78350F;" value="Complex Logic Block&#xa;(Check Required)?" vertex="1">
+          <mxGeometry height="70" width="160" x="150" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="a_lock_editor" parent="lane1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FEF2F2;strokeColor=#EF4444;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#991B1B;" value="Temporarily lock Monaco Editor &amp;amp;&#xa;Render Contextual Question Modal" vertex="1">
+          <mxGeometry height="50" width="200" x="30" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="a_submit_ans" parent="lane1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#166534;" value="Student submits answer / fills blank" vertex="1">
+          <mxGeometry height="45" width="180" x="40" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="d_ans_correct" parent="lane1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#78350F;" value="Answer&#xa;Correct?" vertex="1">
+          <mxGeometry height="60" width="100" x="80" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="a_show_hint" parent="lane1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#92400E;" value="Display conceptual explanation &amp;amp;&#xa;Allow retry attempt" vertex="1">
+          <mxGeometry height="45" width="180" x="260" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="a_unlock_editor" parent="lane1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontStyle=1;fontSize=11;fontColor=#14532D;" value="Grant concept badge, dismiss modal,&#xa;&amp;amp; unlock Monaco Code Editor" vertex="1">
+          <mxGeometry height="50" width="200" x="40" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="a_start_coding" parent="lane1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F8FAFC;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#334155;" value="Student begins hands-on coding" vertex="1">
+          <mxGeometry height="45" width="160" x="150" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="end_a" parent="lane1" style="ellipse;html=1;shape=endState;fillColor=#0F172A;strokeColor=#16A34A;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="215" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_0" edge="1" parent="lane1" source="start_a" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="a_step_sel" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_1" edge="1" parent="lane1" source="a_step_sel" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="d_check_req" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_2" edge="1" parent="lane1" source="d_check_req" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="a_lock_editor" value="[Yes: Gatekeeper]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_3" edge="1" parent="lane1" source="d_check_req" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;rounded=0;curved=0;" target="a_start_coding" value="[No: Direct unlock]">
+          <mxGeometry relative="1" x="-0.831" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="450" y="210" />
+              <mxPoint x="450" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_l1_4" edge="1" parent="lane1" source="a_lock_editor" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="a_submit_ans" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_5" edge="1" parent="lane1" source="a_submit_ans" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="d_ans_correct" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_6" edge="1" parent="lane1" source="d_ans_correct" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.5;fontSize=10;fontColor=#15803D;" target="a_unlock_editor" value="[Yes]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_7" edge="1" parent="lane1" source="d_ans_correct" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;fontSize=10;fontColor=#DC2626;" target="a_show_hint" value="[No]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_8" edge="1" parent="lane1" source="a_show_hint" style="endArrow=block;endFill=1;html=1;strokeColor=#D97706;strokeWidth=1.5;fontSize=10;fontColor=#D97706;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;rounded=0;curved=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="a_submit_ans" value="Retry">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_9" edge="1" parent="lane1" source="a_unlock_editor" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="a_start_coding" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_10" edge="1" parent="lane1" source="a_start_coding" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="end_a" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2" parent="1" style="shape=swimlane;startSize=30;fillColor=#F8FAFC;strokeColor=#DB2777;strokeWidth=2;fontStyle=1;fontSize=13;fontColor=#9D174D;" value="Flow B: Anti-Boredom Meme Engine" vertex="1">
+          <mxGeometry height="740" width="460" x="560" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="start_b" parent="lane2" style="ellipse;html=1;shape=startState;fillColor=#0F172A;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="215" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b_monitor" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FDF2F8;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#831843;" value="Background Session Monitor initializes&#xa;(tracks timer &amp;amp; consecutive validation errors)" vertex="1">
+          <mxGeometry height="45" width="220" x="120" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="d_trigger_cond" parent="lane2" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#78350F;" value="Trigger Threshold&#xa;Reached?&#xa;(25 min coding OR&#xa;3 consecutive errors)" vertex="1">
+          <mxGeometry height="85" width="190" x="135" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="b_fetch_meme" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FDF2F8;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#831843;" value="Query Meme Repository for context-aware&#xa;developer meme (e.g. MERN fatigue / syntax bug)" vertex="1">
+          <mxGeometry height="50" width="220" x="120" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="b_render_popup" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FCE7F3;strokeColor=#DB2777;strokeWidth=2;fontStyle=1;fontSize=11;fontColor=#831843;" value="Render Non-Intrusive Floating Meme Modal&#xa;with relatable caption &amp;amp; break reminder" vertex="1">
+          <mxGeometry height="50" width="220" x="120" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="b_user_action" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#166534;" value="Student laughs / reacts / dismisses modal" vertex="1">
+          <mxGeometry height="45" width="200" x="130" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="b_reset_timer" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#1E3A8A;" value="Reset session fatigue timer &amp;amp;&#xa;clear consecutive error counter" vertex="1">
+          <mxGeometry height="45" width="200" x="130" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="b_resume" parent="lane2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F8FAFC;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#334155;" value="Resume seamless coding flow" vertex="1">
+          <mxGeometry height="45" width="170" x="145" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="end_b" parent="lane2" style="ellipse;html=1;shape=endState;fillColor=#0F172A;strokeColor=#DB2777;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="215" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_0" edge="1" parent="lane2" source="start_b" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="b_monitor" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_1" edge="1" parent="lane2" source="b_monitor" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="d_trigger_cond" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_2" edge="1" parent="lane2" source="d_trigger_cond" style="endArrow=block;endFill=1;html=1;strokeColor=#DB2777;strokeWidth=1.5;fontSize=10;fontColor=#DB2777;" target="b_fetch_meme" value="[Yes: Triggered]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_3" edge="1" parent="lane2" source="d_trigger_cond" style="endArrow=block;endFill=1;html=1;strokeColor=#64748B;strokeWidth=1.5;fontSize=10;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;rounded=0;curved=0;" target="b_monitor" value="[No: Keep Polling]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="210.03" />
+              <mxPoint x="400" y="122.49" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_l2_4" edge="1" parent="lane2" source="b_fetch_meme" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="b_render_popup" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_5" edge="1" parent="lane2" source="b_render_popup" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="b_user_action" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_6" edge="1" parent="lane2" source="b_user_action" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="b_reset_timer" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_7" edge="1" parent="lane2" source="b_reset_timer" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="b_resume" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_8" edge="1" parent="lane2" source="b_resume" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" target="end_b" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

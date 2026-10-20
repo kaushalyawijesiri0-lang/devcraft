@@ -1,0 +1,950 @@
+<mxfile host="Electron" modified="2026-10-01T15:20:00.000Z" agent="DevCraft UML Generator" version="21.0.0" type="device">
+  <diagram id="use_case_diag" name="Use Case Diagram - Guided Workspace">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bound" value="Subsystem: Guided Coding Workspace &amp; Anti-Boredom Engine (Feature 01)" style="shape=rect;dashed=1;strokeColor=#475569;strokeWidth=2;fillColor=#F8FAFC;align=center;verticalAlign=top;fontSize=15;fontStyle=1;fontColor=#0F172A;spacingTop=15;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="760" height="880" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_student" value="Learner / Student" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=2;fontStyle=1;fontSize=13;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="80" y="380" width="60" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_ast" value="&lt;&lt;System&gt;&gt;&#xa;Background AST&#xa;Validation Engine" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=2;fontStyle=1;fontSize=12;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="240" width="60" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_meme" value="&lt;&lt;System&gt;&gt;&#xa;Anti-Boredom&#xa;Meme Engine" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FCE7F3;strokeColor=#DB2777;strokeWidth=2;fontStyle=1;fontSize=12;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="660" width="60" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" value="Browse &amp; Select Guided Project Step" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="310" y="80" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" value="View Step Instructions &amp; Requirements" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="310" y="160" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" value="Write &amp; Edit Code in Monaco Editor" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="310" y="250" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" value="View Real-Time Live UI Preview" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="310" y="340" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" value="Attempt Contextual Concept Pop-up Check" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="310" y="430" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc6" value="Trigger Silent Background AST Validation" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="310" y="520" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc7" value="Run Sandboxed Unit Tests (Jest)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="710" y="480" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc8" value="Unlock Subsequent Project Step" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="710" y="570" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc9" value="Display Inline Syntax &amp; Logic Diagnostics" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="710" y="660" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc10" value="Trigger Context-Aware Programming Meme" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="710" y="770" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc11" value="Dismiss / Laugh / Snooze Meme Modal" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#1E293B;" vertex="1" parent="1">
+          <mxGeometry x="310" y="790" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="link_s_uc1" style="endArrow=none;html=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" source="actor_student" target="uc1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_s_uc2" style="endArrow=none;html=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" source="actor_student" target="uc2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_s_uc3" style="endArrow=none;html=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" source="actor_student" target="uc3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_s_uc4" style="endArrow=none;html=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" source="actor_student" target="uc4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_s_uc5" style="endArrow=none;html=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" source="actor_student" target="uc5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_s_uc6" style="endArrow=none;html=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" source="actor_student" target="uc6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_s_uc11" style="endArrow=none;html=1;strokeColor=#475569;strokeWidth=1.5;" edge="1" source="actor_student" target="uc11" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_ast_uc6" style="endArrow=none;html=1;strokeColor=#D97706;strokeWidth=1.5;" edge="1" source="actor_ast" target="uc6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_ast_uc7" style="endArrow=none;html=1;strokeColor=#D97706;strokeWidth=1.5;" edge="1" source="actor_ast" target="uc7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="link_meme_uc10" style="endArrow=none;html=1;strokeColor=#DB2777;strokeWidth=1.5;" edge="1" source="actor_meme" target="uc10" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_uc6_uc7" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;fontColor=#1D4ED8;align=center;" edge="1" source="uc6" target="uc7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc_uc6_uc8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#2563EB;strokeWidth=1.5;fontSize=11;fontColor=#1D4ED8;align=center;" edge="1" source="uc6" target="uc8" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_uc9_uc6" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;(on validation failure)" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;fontColor=#B91C1C;align=center;" edge="1" source="uc9" target="uc6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_uc10_uc3" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;&#xa;(session fatigue / error streak)" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#DB2777;strokeWidth=1.5;fontSize=11;fontColor=#9D174D;align=center;" edge="1" source="uc10" target="uc3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext_uc11_uc10" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.5;fontSize=11;fontColor=#334155;align=center;" edge="1" source="uc11" target="uc10" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="activity_ast" name="Activity - AST Validation &amp; Progression">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="act_title" value="Activity Diagram: Background AST Validation &amp; Step Progression Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="550" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="start_node" value="" style="ellipse;html=1;shape=startState;fillColor=#0F172A;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="500" y="70" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Learner writes / edits code in Monaco Editor" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="400" y="130" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Debounce timer (1200ms) elapses or 'Run' is clicked" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="400" y="210" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Capture active code buffer and send to AST Validation Engine" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="380" y="290" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="Parse Javascript/JSX code into Abstract Syntax Tree (AST)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="380" y="370" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="Syntax Valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#78350F;" vertex="1" parent="1">
+          <mxGeometry x="450" y="450" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a_err1" value="Highlight line errors with red markers in Monaco &amp;amp; display syntax tip" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#7F1D1D;" vertex="1" parent="1">
+          <mxGeometry x="720" y="465" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="Traverse AST to verify required structural constructs&#xa;(e.g., Express router, useState hook, Mongoose Schema)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="370" y="560" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="Required AST&#xa;Constructs Present?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#78350F;" vertex="1" parent="1">
+          <mxGeometry x="435" y="650" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a_err2" value="Display contextual architecture hint&#xa;(e.g., 'Ensure app.use(express.json()) is included')" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#7F1D1D;" vertex="1" parent="1">
+          <mxGeometry x="720" y="665" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="Execute silent Jest unit test specs in sandboxed runner" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="380" y="760" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="All Unit Tests&#xa;Pass?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#78350F;" vertex="1" parent="1">
+          <mxGeometry x="445" y="840" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a_err3" value="Output assertion diff report to console panel;&#xa;Keep next step strictly locked" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#7F1D1D;" vertex="1" parent="1">
+          <mxGeometry x="720" y="855" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fork1" value="" style="html=1;shape=line;strokeWidth=5;strokeColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="340" y="950" width="350" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="branch1" value="Persist Step Status to MongoDB&#xa;(learningProgress collection)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=11;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="240" y="990" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="branch2" value="Dispatch XP &amp;amp; Streak Event&#xa;to Leaderboard Service" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=11;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="430" y="990" width="170" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="branch3" value="Trigger Celebratory Confetti &amp;amp;&#xa;Render Live UI Preview in Panel 3" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontFamily=Helvetica;fontSize=11;fontStyle=1;fontColor=#1E3A8A;" vertex="1" parent="1">
+          <mxGeometry x="620" y="990" width="180" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="join1" value="" style="html=1;shape=line;strokeWidth=5;strokeColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1070" width="350" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="a_unlock" value="Unlock Next Step in Tri-Panel Navigation &amp;amp; Load Next Instructions" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=2;fontFamily=Helvetica;fontSize=12;fontStyle=1;fontColor=#14532D;" vertex="1" parent="1">
+          <mxGeometry x="380" y="1110" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="end_node" value="" style="ellipse;html=1;shape=endState;fillColor=#0F172A;strokeColor=#15803D;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="start_node" target="a1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_2" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="a1" target="a2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_3" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="a2" target="a3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_4" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="a3" target="a4" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_5" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="a4" target="d1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_6" value="[Yes: Valid]" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="d1" target="a5" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_7" value="[No: Syntax Error]" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;fontColor=#DC2626;" edge="1" source="d1" target="a_err1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_8" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="a5" target="d2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_9" value="[Yes: Nodes Match]" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="d2" target="a6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_10" value="[No: Missing Nodes]" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;fontColor=#DC2626;" edge="1" source="d2" target="a_err2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_11" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="a6" target="d3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_12" value="[Yes: All Pass]" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.5;fontSize=11;fontColor=#15803D;" edge="1" source="d3" target="fork1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_13" value="[No: Fails]" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;fontSize=11;fontColor=#DC2626;" edge="1" source="d3" target="a_err3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_14" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="fork1" target="branch1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_15" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="fork1" target="branch2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_16" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="fork1" target="branch3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_17" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="branch1" target="join1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_18" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="branch2" target="join1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_19" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="branch3" target="join1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_20" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=11;fontColor=#1E293B;" edge="1" source="join1" target="a_unlock" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_act_21" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.5;fontSize=11;fontColor=#15803D;" edge="1" source="a_unlock" target="end_node" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_loop_1" value="Student Revises Code" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;dashed=1;fontSize=11;fontColor=#991B1B;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" edge="1" source="a_err1" target="a1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_loop_2" value="Student Revises Code" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;dashed=1;fontSize=11;fontColor=#991B1B;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" edge="1" source="a_err2" target="a1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_loop_3" value="Student Revises Code" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;dashed=1;fontSize=11;fontColor=#991B1B;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" edge="1" source="a_err3" target="a1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="activity_meme_check" name="Activity - Context Pop-up &amp; Meme Engine">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="880" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="act2_title" value="Activity Diagram: Contextual Concept Check &amp; Anti-Boredom Meme Engine" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lane1" value="Flow A: Contextual Pop-Up Concept Check (Gatekeeper)" style="shape=swimlane;startSize=30;fillColor=#F8FAFC;strokeColor=#3B82F6;strokeWidth=2;fontStyle=1;fontSize=13;fontColor=#1E40AF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="460" height="740" as="geometry" />
+        </mxCell>
+        <mxCell id="start_a" value="" style="ellipse;html=1;shape=startState;fillColor=#0F172A;strokeColor=none;" vertex="1" parent="lane1">
+          <mxGeometry x="215" y="45" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="a_step_sel" value="Student navigates to next project step" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#1E3A8A;" vertex="1" parent="lane1">
+          <mxGeometry x="140" y="100" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="d_check_req" value="Complex Logic Block&#xa;(Check Required)?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#78350F;" vertex="1" parent="lane1">
+          <mxGeometry x="150" y="175" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="a_lock_editor" value="Temporarily lock Monaco Editor &amp;amp;&#xa;Render Contextual Question Modal" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FEF2F2;strokeColor=#EF4444;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#991B1B;" vertex="1" parent="lane1">
+          <mxGeometry x="30" y="275" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a_submit_ans" value="Student submits answer / fills blank" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#166534;" vertex="1" parent="lane1">
+          <mxGeometry x="40" y="355" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="d_ans_correct" value="Answer&#xa;Correct?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#78350F;" vertex="1" parent="lane1">
+          <mxGeometry x="80" y="430" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a_show_hint" value="Display conceptual explanation &amp;amp;&#xa;Allow retry attempt" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#92400E;" vertex="1" parent="lane1">
+          <mxGeometry x="230" y="437" width="180" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="a_unlock_editor" value="Grant concept badge, dismiss modal,&#xa;&amp;amp; unlock Monaco Code Editor" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=2;fontStyle=1;fontSize=11;fontColor=#14532D;" vertex="1" parent="lane1">
+          <mxGeometry x="40" y="530" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a_start_coding" value="Student begins hands-on coding" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F8FAFC;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#334155;" vertex="1" parent="lane1">
+          <mxGeometry x="150" y="615" width="160" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="end_a" value="" style="ellipse;html=1;shape=endState;fillColor=#0F172A;strokeColor=#16A34A;strokeWidth=2;" vertex="1" parent="lane1">
+          <mxGeometry x="215" y="685" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_0" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="start_a" target="a_step_sel" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="a_step_sel" target="d_check_req" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_2" value="[Yes: Gatekeeper]" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="d_check_req" target="a_lock_editor" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_3" value="[No: Direct unlock]" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="d_check_req" target="a_start_coding" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_4" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="a_lock_editor" target="a_submit_ans" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_5" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="a_submit_ans" target="d_ans_correct" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_6" value="[Yes]" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.5;fontSize=10;fontColor=#15803D;" edge="1" source="d_ans_correct" target="a_unlock_editor" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_7" value="[No]" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.5;fontSize=10;fontColor=#DC2626;" edge="1" source="d_ans_correct" target="a_show_hint" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_8" value="Retry" style="endArrow=block;endFill=1;html=1;strokeColor=#D97706;strokeWidth=1.5;fontSize=10;fontColor=#D97706;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" edge="1" source="a_show_hint" target="a_submit_ans" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_9" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="a_unlock_editor" target="a_start_coding" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l1_10" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="a_start_coding" target="end_a" parent="lane1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2" value="Flow B: Anti-Boredom Meme Engine" style="shape=swimlane;startSize=30;fillColor=#F8FAFC;strokeColor=#DB2777;strokeWidth=2;fontStyle=1;fontSize=13;fontColor=#9D174D;" vertex="1" parent="1">
+          <mxGeometry x="560" y="70" width="460" height="740" as="geometry" />
+        </mxCell>
+        <mxCell id="start_b" value="" style="ellipse;html=1;shape=startState;fillColor=#0F172A;strokeColor=none;" vertex="1" parent="lane2">
+          <mxGeometry x="215" y="45" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b_monitor" value="Background Session Monitor initializes&#xa;(tracks timer &amp;amp; consecutive validation errors)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FDF2F8;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#831843;" vertex="1" parent="lane2">
+          <mxGeometry x="120" y="100" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="d_trigger_cond" value="Trigger Threshold&#xa;Reached?&#xa;(25 min coding OR&#xa;3 consecutive errors)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#78350F;" vertex="1" parent="lane2">
+          <mxGeometry x="135" y="175" width="190" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="b_fetch_meme" value="Query Meme Repository for context-aware&#xa;developer meme (e.g. MERN fatigue / syntax bug)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FDF2F8;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#831843;" vertex="1" parent="lane2">
+          <mxGeometry x="120" y="295" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b_render_popup" value="Render Non-Intrusive Floating Meme Modal&#xa;with relatable caption &amp;amp; break reminder" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#FCE7F3;strokeColor=#DB2777;strokeWidth=2;fontStyle=1;fontSize=11;fontColor=#831843;" vertex="1" parent="lane2">
+          <mxGeometry x="120" y="375" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b_user_action" value="Student laughs / reacts / dismisses modal" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F0FDF4;strokeColor=#16A34A;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#166534;" vertex="1" parent="lane2">
+          <mxGeometry x="130" y="455" width="200" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b_reset_timer" value="Reset session fatigue timer &amp;amp;&#xa;clear consecutive error counter" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#EFF6FF;strokeColor=#3B82F6;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#1E3A8A;" vertex="1" parent="lane2">
+          <mxGeometry x="130" y="535" width="200" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b_resume" value="Resume seamless coding flow" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#F8FAFC;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#334155;" vertex="1" parent="lane2">
+          <mxGeometry x="145" y="615" width="170" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="end_b" value="" style="ellipse;html=1;shape=endState;fillColor=#0F172A;strokeColor=#DB2777;strokeWidth=2;" vertex="1" parent="lane2">
+          <mxGeometry x="215" y="685" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_0" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="start_b" target="b_monitor" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_1" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="b_monitor" target="d_trigger_cond" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_2" value="[Yes: Triggered]" style="endArrow=block;endFill=1;html=1;strokeColor=#DB2777;strokeWidth=1.5;fontSize=10;fontColor=#DB2777;" edge="1" source="d_trigger_cond" target="b_fetch_meme" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_3" value="[No: Keep Polling]" style="endArrow=block;endFill=1;html=1;strokeColor=#64748B;strokeWidth=1.5;fontSize=10;edgeStyle=orthogonalEdgeStyle;entryX=1;entryY=0.5;" edge="1" source="d_trigger_cond" target="b_monitor" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_4" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="b_fetch_meme" target="b_render_popup" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_5" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="b_render_popup" target="b_user_action" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_6" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="b_user_action" target="b_reset_timer" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_7" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="b_reset_timer" target="b_resume" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_l2_8" value="" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.5;fontSize=10;" edge="1" source="b_resume" target="end_b" parent="lane2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="seq_validation" name="Sequence - AST Validation &amp; Progression">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="seq1_title" value="Sequence Diagram: Real-Time AST Validation &amp; Progressive Step Unlocking" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_student" value="Learner (Student)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="110" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_ui" value=":TriPanelWorkspace" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="240" y="70" width="120" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_monaco" value=":MonacoEditorWrapper" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="400" y="70" width="140" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_store" value=":IDEStateManager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="580" y="70" width="120" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_api" value=":ASTValidationController" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="740" y="70" width="150" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_sandbox" value=":JestSandboxRunner" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="930" y="70" width="130" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_db" value=":MongoDB(learningProgress)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="70" width="160" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="seq_msg_1" value="typeCode(codeSnippet)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="135" as="sourcePoint" />
+            <mxPoint x="470" y="135" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_2" value="updateCodeBuffer(stepId, codeSnippet)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="470" y="165" as="sourcePoint" />
+            <mxPoint x="640" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_3" value="click('Run &amp; Validate')" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="195" as="sourcePoint" />
+            <mxPoint x="300" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_4" value="triggerValidation(stepId)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="225" as="sourcePoint" />
+            <mxPoint x="640" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_5" value="POST /api/workspace/validate { stepId, code, userId }" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="255" as="sourcePoint" />
+            <mxPoint x="815" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_6" value="parseToAST(code) &amp; verifyRequiredNodes()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="285" as="sourcePoint" />
+            <mxPoint x="815" y="315" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="865" y="285" />
+              <mxPoint x="865" y="315" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_7" value="executeSilentTests(code, stepTestSpecs)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="345" as="sourcePoint" />
+            <mxPoint x="995" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_8" value="runJestTestSuites()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="995" y="375" as="sourcePoint" />
+            <mxPoint x="995" y="405" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1045" y="375" />
+              <mxPoint x="1045" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_9" value="testReport { passed: true, assertions: 4/4 }" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="995" y="435" as="sourcePoint" />
+            <mxPoint x="815" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_10" value="updateOne({ userId, stepId }, { status: 'COMPLETED' })" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="465" as="sourcePoint" />
+            <mxPoint x="1180" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_11" value="acknowledgeUpdate(writeResult)" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180" y="495" as="sourcePoint" />
+            <mxPoint x="815" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_12" value="200 OK { success: true, nextStepUnlocked: 2, xp: +50 }" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="525" as="sourcePoint" />
+            <mxPoint x="640" y="525" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_13" value="updateStepStatus(nextStepId, 'UNLOCKED')" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="555" as="sourcePoint" />
+            <mxPoint x="300" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_14" value="triggerCelebrationFeedback()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="585" as="sourcePoint" />
+            <mxPoint x="300" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_15" value="renderConfetti() &amp; compileLivePreview()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="615" as="sourcePoint" />
+            <mxPoint x="300" y="645" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="615" />
+              <mxPoint x="350" y="645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq_msg_16" value="displaySuccessToast() &amp; unlockStepNavigation()" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="675" as="sourcePoint" />
+            <mxPoint x="135" y="675" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="seq_meme_check" name="Sequence - Concept Check &amp; Meme Trigger">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="seq2_title" value="Sequence Diagram: Contextual Concept Checkpoint &amp; Anti-Boredom Meme Triggers" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="220" y="20" width="650" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s_student" value="Learner (Student)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#E0F2FE;strokeColor=#0284C7;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="80" y="70" width="110" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ui" value=":TriPanelWorkspace" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="240" y="70" width="120" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="s_chk" value=":ContextCheckManager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="410" y="70" width="150" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="s_timer" value=":SessionActivityMonitor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="610" y="70" width="150" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="s_meme" value=":MemePopupManager" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FCE7F3;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="810" y="70" width="140" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="s_db" value=":MongoDB(PlatformContent)" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="70" width="170" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="frame_partA" value="[Part A: Contextual Pre-requisite Concept Check]" style="shape=umlFrame;whiteSpace=wrap;html=1;width=270;height=25;fillColor=none;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#1E40AF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="115" width="1120" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2_m_1" value="selectStep(stepId = 3)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="150" as="sourcePoint" />
+            <mxPoint x="300" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_2" value="verifyPrerequisites(stepId = 3)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="180" as="sourcePoint" />
+            <mxPoint x="485" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_3" value="fetchStepMetadata(stepId)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="210" as="sourcePoint" />
+            <mxPoint x="1085" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_4" value="stepData { requiresConceptCheck: true, questionId: 'Q302' }" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1085" y="240" as="sourcePoint" />
+            <mxPoint x="485" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_5" value="lockEditorAndRenderModal(questionData)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="270" as="sourcePoint" />
+            <mxPoint x="300" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_6" value="displayConceptQuestionModal('Explain Express Middleware Flow')" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#2563EB;strokeWidth=1.2;fontSize=10;fontColor=#1E40AF;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="300" as="sourcePoint" />
+            <mxPoint x="135" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_7" value="submitConceptAnswer('Passes request to next handler')" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="330" as="sourcePoint" />
+            <mxPoint x="300" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_8" value="validateAnswer('Q302', answer)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="360" as="sourcePoint" />
+            <mxPoint x="485" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_9" value="verificationResult { isCorrect: true, unlockEditor: true }" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="485" y="380" as="sourcePoint" />
+            <mxPoint x="300" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="frame_partB" value="[Part B: Anti-Boredom Meme Pop-Up Trigger]" style="shape=umlFrame;whiteSpace=wrap;html=1;width=260;height=25;fillColor=none;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#9D174D;" vertex="1" parent="1">
+          <mxGeometry x="60" y="420" width="1120" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="seq2_m_10" value="continuousCodingSession()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="455" as="sourcePoint" />
+            <mxPoint x="300" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_11" value="recordActivity(keystrokes, timestamp)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="485" as="sourcePoint" />
+            <mxPoint x="685" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_12" value="evaluateThreshold(activeMinutes &gt;= 25 OR consecutiveErrors &gt;= 3)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;edgeStyle=orthogonalEdgeStyle;curved=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="515" as="sourcePoint" />
+            <mxPoint x="685" y="545" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="735" y="515" />
+              <mxPoint x="735" y="545" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_13" value="triggerMemeEvent(context: 'MERN_FATIGUE')" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="575" as="sourcePoint" />
+            <mxPoint x="880" y="575" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_14" value="getRandomMeme({ tag: 'javascript_async' })" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="605" as="sourcePoint" />
+            <mxPoint x="1085" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_15" value="return memeItem { url, caption, tags }" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1085" y="635" as="sourcePoint" />
+            <mxPoint x="880" y="635" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_16" value="openMemeModal(memeItem)" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="665" as="sourcePoint" />
+            <mxPoint x="300" y="665" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_17" value="displayFloatingMemeModal('Take a quick breather! ☕')" style="dashed=1;endArrow=open;endFill=0;html=1;strokeColor=#DB2777;strokeWidth=1.2;fontSize=10;fontColor=#9D174D;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="695" as="sourcePoint" />
+            <mxPoint x="135" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_18" value="dismissMeme() / click('Got it, back to coding')" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="735" as="sourcePoint" />
+            <mxPoint x="300" y="735" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="seq2_m_19" value="resetSessionTimer() &amp; clearConsecutiveErrors()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="765" as="sourcePoint" />
+            <mxPoint x="685" y="765" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="class_diag" name="Design Class Diagram - Workspace">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cd_title" value="Design Class Diagram (DCD): Guided Coding Workspace &amp; Anti-Boredom Subsystem" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="700" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace" value="&lt;&lt;React Component&gt;&gt;&#xa;IDEWorkspace" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="240" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace_attrs" value="- projectId: String&#xa;- currentStepNumber: Int&#xa;- isEditorLocked: Boolean&#xa;- isPreviewActive: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_workspace">
+          <mxGeometry y="30" width="240" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" vertex="1" parent="c_workspace">
+          <mxGeometry y="102" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace_meths" value="+ loadProjectStep(stepId: String): void&#xa;+ handleCodeChange(code: String): void&#xa;+ runValidation(): Promise&amp;lt;TestReport&amp;gt;&#xa;+ togglePreview(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_workspace">
+          <mxGeometry y="106" width="240" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions" value="&lt;&lt;React Component&gt;&gt;&#xa;InstructionsPanel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions_attrs" value="- stepTitle: String&#xa;- markdownContent: String&#xa;- hintList: List&amp;lt;String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_instructions">
+          <mxGeometry y="30" width="220" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" vertex="1" parent="c_instructions">
+          <mxGeometry y="86" width="220" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions_meths" value="+ renderMarkdown(): JSX&#xa;+ revealNextHint(): void&#xa;+ toggleCollapsible(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_instructions">
+          <mxGeometry y="90" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco" value="&lt;&lt;React Component&gt;&gt;&#xa;MonacoEditorWrapper" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="80" width="230" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco_attrs" value="- editorInstance: IStandaloneCodeEditor&#xa;- currentLanguage: String = 'javascript'&#xa;- syntaxErrorMarkers: List&amp;lt;IMarker&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_monaco">
+          <mxGeometry y="30" width="230" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" vertex="1" parent="c_monaco">
+          <mxGeometry y="86" width="230" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco_meths" value="+ getCode(): String&#xa;+ setCode(content: String): void&#xa;+ setDiagnostics(markers: List): void&#xa;+ formatCode(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_monaco">
+          <mxGeometry y="90" width="230" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview" value="&lt;&lt;React Component&gt;&gt;&#xa;LivePreviewRenderer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="850" y="80" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview_attrs" value="- iframeRef: HTMLIFrameElement&#xa;- sandboxUrl: String&#xa;- consoleLogs: List&amp;lt;String&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_preview">
+          <mxGeometry y="30" width="220" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" vertex="1" parent="c_preview">
+          <mxGeometry y="86" width="220" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview_meths" value="+ compileBundle(): void&#xa;+ refreshIframe(): void&#xa;+ captureConsoleErrors(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_preview">
+          <mxGeometry y="90" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal" value="&lt;&lt;React Component&gt;&gt;&#xa;ContextualCheckModal" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="240" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal_attrs" value="- questionId: String&#xa;- promptText: String&#xa;- options: List&amp;lt;String&amp;gt;&#xa;- isAnswerCorrect: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_context_modal">
+          <mxGeometry y="30" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" vertex="1" parent="c_context_modal">
+          <mxGeometry y="95" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal_meths" value="+ displayModal(): void&#xa;+ submitAnswer(answer: String): Boolean&#xa;+ onValidationSuccess(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_context_modal">
+          <mxGeometry y="99" width="240" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager" value="&lt;&lt;React Component&gt;&gt;&#xa;MemePopupManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FDF2F8;strokeColor=#DB2777;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="280" width="240" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager_attrs" value="- activeSessionMinutes: Int&#xa;- consecutiveErrors: Int&#xa;- fatigueThreshold: Int = 25&#xa;- isMemeVisible: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_meme_manager">
+          <mxGeometry y="30" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DB2777;" vertex="1" parent="c_meme_manager">
+          <mxGeometry y="95" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager_meths" value="+ monitorUserActivity(): void&#xa;+ recordFailedAttempt(): void&#xa;+ triggerRandomMeme(): void&#xa;+ dismissMeme(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_meme_manager">
+          <mxGeometry y="99" width="240" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store" value="&lt;&lt;State Manager - Zustand&gt;&gt;&#xa;IDEStateManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="280" width="250" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store_attrs" value="- activeStep: Int&#xa;- codeBuffers: Map&amp;lt;String, String&amp;gt;&#xa;- validationStatus: Enum&#xa;- unlockedSteps: Set&amp;lt;Int&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_store">
+          <mxGeometry y="30" width="250" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7C3AED;" vertex="1" parent="c_store">
+          <mxGeometry y="95" width="250" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store_meths" value="+ setActiveStep(step: Int): void&#xa;+ updateCode(stepId: String, code: String): void&#xa;+ setValidationReport(report: Object): void&#xa;+ unlockNextStep(): void&#xa;+ resetSession(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_store">
+          <mxGeometry y="99" width="250" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc" value="&lt;&lt;Service&gt;&gt;&#xa;ASTValidationService" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="520" width="250" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc_attrs" value="- babelParser: Parser&#xa;- astRulesRegistry: Map&amp;lt;String, Rule&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_ast_svc">
+          <mxGeometry y="30" width="250" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D97706;" vertex="1" parent="c_ast_svc">
+          <mxGeometry y="75" width="250" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc_meths" value="+ parseToAST(code: String): ASTNode&#xa;+ verifyRequiredNodes(ast: ASTNode, rules: List): Boolean&#xa;+ executeSilentTests(code: String, spec: String): TestReport" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_ast_svc">
+          <mxGeometry y="79" width="250" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox" value="&lt;&lt;Service&gt;&gt;&#xa;JestSandboxRunner" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="520" width="240" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox_attrs" value="- isolatedWorker: WorkerPool&#xa;- executionTimeoutMs: Int = 3000" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_sandbox">
+          <mxGeometry y="30" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D97706;" vertex="1" parent="c_sandbox">
+          <mxGeometry y="75" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox_meths" value="+ createSandboxEnv(): Sandbox&#xa;+ runTestSuite(code: String, spec: String): Report&#xa;+ terminateHangingTasks(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_sandbox">
+          <mxGeometry y="79" width="240" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model" value="&lt;&lt;Mongoose Schema&gt;&gt;&#xa;ProjectStepModel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="240" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model_attrs" value="- stepId: String&#xa;- stepIndex: Int&#xa;- instructionsMarkdown: String&#xa;- starterCodeTemplate: String&#xa;- requiredASTNodes: List&amp;lt;String&amp;gt;&#xa;- requiresConceptCheck: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_step_model">
+          <mxGeometry y="30" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DC2626;" vertex="1" parent="c_step_model">
+          <mxGeometry y="120" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model_meths" value="+ getByStepIndex(step: Int): Promise&#xa;+ validateAgainstRules(): Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_step_model">
+          <mxGeometry y="124" width="240" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model" value="&lt;&lt;Mongoose Schema&gt;&gt;&#xa;LearningProgressModel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="890" y="480" width="240" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model_attrs" value="- userId: ObjectId&#xa;- projectId: ObjectId&#xa;- completedSteps: List&amp;lt;Int&amp;gt;&#xa;- currentActiveStep: Int&#xa;- earnedXP: Int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_progress_model">
+          <mxGeometry y="30" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DC2626;" vertex="1" parent="c_progress_model">
+          <mxGeometry y="110" width="240" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model_meths" value="+ markStepComplete(userId, step): Promise&#xa;+ getUserProgress(userId): Promise" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_progress_model">
+          <mxGeometry y="114" width="240" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model" value="&lt;&lt;Mongoose Schema&gt;&gt;&#xa;MemeModel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="890" y="300" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model_attrs" value="- memeId: String&#xa;- imageUrl: String&#xa;- caption: String&#xa;- contextCategory: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_meme_model">
+          <mxGeometry y="30" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model_div" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DC2626;" vertex="1" parent="c_meme_model">
+          <mxGeometry y="95" width="220" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model_meths" value="+ getRandomByCategory(cat: String): Promise" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" vertex="1" parent="c_meme_model">
+          <mxGeometry y="99" width="220" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_0" value="1" style="endArrow=diamond;endFill=1;html=1;strokeColor=#1E293B;strokeWidth=1.5;startArrow=none;fontSize=10;fontColor=#475569;" edge="1" source="c_workspace" target="c_instructions" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_1" value="1" style="endArrow=diamond;endFill=1;html=1;strokeColor=#1E293B;strokeWidth=1.5;startArrow=none;fontSize=10;fontColor=#475569;" edge="1" source="c_workspace" target="c_monaco" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_2" value="1" style="endArrow=diamond;endFill=1;html=1;strokeColor=#1E293B;strokeWidth=1.5;startArrow=none;fontSize=10;fontColor=#475569;" edge="1" source="c_workspace" target="c_preview" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_3" value="0..1" style="endArrow=none;html=1;strokeColor=#1E293B;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_workspace" target="c_context_modal" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_4" value="1" style="endArrow=none;html=1;strokeColor=#1E293B;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_workspace" target="c_meme_manager" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_5" value="uses" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_workspace" target="c_store" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_6" value="invokes API" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_store" target="c_ast_svc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_7" value="1" style="endArrow=none;html=1;strokeColor=#1E293B;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_ast_svc" target="c_sandbox" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_8" value="reads" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_ast_svc" target="c_step_model" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_9" value="updates" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_ast_svc" target="c_progress_model" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_10" value="queries" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" edge="1" source="c_meme_manager" target="c_meme_model" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="state_machine_diag" name="State Machine - Step Lifecycle">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sm_title" value="State Machine Diagram: Project Step Lifecycle &amp; IDE Session Statechart" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="250" y="20" width="650" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_start" value="" style="ellipse;html=1;shape=startState;fillColor=#0F172A;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="240" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s_locked" value="STEP_LOCKED&lt;br/&gt;(Prerequisite steps unfinished)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#F1F5F9;strokeColor=#64748B;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="140" y="220" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_concept_check" value="CONCEPT_CHECK_PENDING&lt;br/&gt;entry / Lock Monaco Editor&lt;br/&gt;do / Display Theory Question Modal" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="390" y="100" width="250" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="s_coding_active" value="CODING_ACTIVE&lt;br/&gt;entry / Unlock Monaco Editor&lt;br/&gt;do / Poll keystrokes &amp;amp; timer&lt;br/&gt;exit / Capture code snapshot" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#EEF2FF;strokeColor=#4F46E5;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="410" y="290" width="240" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ast_validation" value="VALIDATING_AST&lt;br/&gt;do / Parse code into AST&lt;br/&gt;do / Check required syntax nodes" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="730" y="290" width="220" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="s_syntax_err" value="SYNTAX_ERROR_FLAGGED&lt;br/&gt;entry / Add Monaco red markers&lt;br/&gt;do / Show syntax hint tooltip" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="730" y="130" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_test_exec" value="UNIT_TESTS_RUNNING&lt;br/&gt;do / Execute Jest specs in sandbox" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="730" y="440" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_test_failed" value="TESTS_FAILED&lt;br/&gt;entry / Render assertion failure&lt;br/&gt;do / Show contextual hint" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="420" y="440" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_step_completed" value="STEP_COMPLETED&lt;br/&gt;entry / Confetti &amp;amp; XP dispatch&lt;br/&gt;entry / Persist progress in DB&lt;br/&gt;do / Unlock next step index" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="730" y="580" width="220" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="s_meme_popup" value="MEME_MODAL_ACTIVE&lt;br/&gt;entry / Pause IDE interactions&lt;br/&gt;do / Display context-aware meme&lt;br/&gt;exit / Reset session fatigue timer" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FCE7F3;strokeColor=#DB2777;strokeWidth=1.5;fontStyle=1;fontSize=11;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="120" y="390" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_end" value="" style="ellipse;html=1;shape=endState;fillColor=#0F172A;strokeColor=#16A34A;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="825" y="720" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_0" value="Project Initialized" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="sm_start" target="s_locked" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_1" value="[Prev step done &amp;amp; requiresCheck==true]" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_locked" target="s_concept_check" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_2" value="[Prev step done &amp;amp; requiresCheck==false]" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_locked" target="s_coding_active" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_3" value="[Answer is Correct] / Award Badge" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_concept_check" target="s_coding_active" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_4" value="[Answer Incorrect] / Display Hint" style="endArrow=block;endFill=1;html=1;strokeColor=#D97706;strokeWidth=1.2;fontSize=10;fontColor=#D97706;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_concept_check" target="s_concept_check" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_5" value="runValidation() / Clicked or Debounced" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_coding_active" target="s_ast_validation" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_6" value="[AST Parsing Fails]" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;fontColor=#DC2626;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_ast_validation" target="s_syntax_err" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_7" value="userEditsCode()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_syntax_err" target="s_coding_active" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_8" value="[AST Nodes Validated]" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_ast_validation" target="s_test_exec" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_9" value="[1 or more Assertions Fail]" style="endArrow=block;endFill=1;html=1;strokeColor=#DC2626;strokeWidth=1.2;fontSize=10;fontColor=#DC2626;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_test_exec" target="s_test_failed" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_10" value="userEditsCode()" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_test_failed" target="s_coding_active" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_11" value="[All Unit Tests Pass]" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_test_exec" target="s_step_completed" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_12" value="[More steps remain in project]" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_step_completed" target="s_locked" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_13" value="[Final step completed]" style="endArrow=block;endFill=1;html=1;strokeColor=#15803D;strokeWidth=1.2;fontSize=10;fontColor=#15803D;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_step_completed" target="sm_end" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_14" value="[Session &gt;= 25m OR Error Streak &gt;= 3]" style="endArrow=block;endFill=1;html=1;strokeColor=#DB2777;strokeWidth=1.2;fontSize=10;fontColor=#DB2777;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_coding_active" target="s_meme_popup" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sm_trans_15" value="dismissMeme() / click 'Back to Code'" style="endArrow=block;endFill=1;html=1;strokeColor=#334155;strokeWidth=1.2;fontSize=10;fontColor=#1E293B;edgeStyle=orthogonalEdgeStyle;curved=1;" edge="1" source="s_meme_popup" target="s_coding_active" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

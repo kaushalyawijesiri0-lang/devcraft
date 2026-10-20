@@ -1,0 +1,222 @@
+<mxfile host="Electron" agent="DevCraft UML Generator">
+  <diagram id="class_diag" name="Design Class Diagram - Workspace">
+    <mxGraphModel dx="1664" dy="1187" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cd_title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;fontColor=#0F172A;" value="Design Class Diagram (DCD): Guided Coding Workspace &amp; Anti-Boredom Subsystem" vertex="1">
+          <mxGeometry height="30" width="700" x="250" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;React Component&gt;&gt;&#xa;IDEWorkspace" vertex="1">
+          <mxGeometry height="175" width="240" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace_attrs" parent="c_workspace" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- projectId: String&#xa;- currentStepNumber: Int&#xa;- isEditorLocked: Boolean&#xa;- isPreviewActive: Boolean" vertex="1">
+          <mxGeometry height="72" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace_div" parent="c_workspace" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" value="" vertex="1">
+          <mxGeometry height="4" width="240" y="102" as="geometry" />
+        </mxCell>
+        <mxCell id="c_workspace_meths" parent="c_workspace" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ loadProjectStep(stepId: String): void&#xa;+ handleCodeChange(code: String): void&#xa;+ runValidation(): Promise&amp;lt;TestReport&amp;gt;&#xa;+ togglePreview(): void" vertex="1">
+          <mxGeometry height="69" width="240" y="106" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;React Component&gt;&gt;&#xa;InstructionsPanel" vertex="1">
+          <mxGeometry height="150" width="220" x="320" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions_attrs" parent="c_instructions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- stepTitle: String&#xa;- markdownContent: String&#xa;- hintList: List&amp;lt;String&amp;gt;" vertex="1">
+          <mxGeometry height="56" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions_div" parent="c_instructions" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" value="" vertex="1">
+          <mxGeometry height="4" width="220" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="c_instructions_meths" parent="c_instructions" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ renderMarkdown(): JSX&#xa;+ revealNextHint(): void&#xa;+ toggleCollapsible(): void" vertex="1">
+          <mxGeometry height="60" width="220" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;React Component&gt;&gt;&#xa;MonacoEditorWrapper" vertex="1">
+          <mxGeometry height="165" width="230" x="580" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco_attrs" parent="c_monaco" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- editorInstance: IStandaloneCodeEditor&#xa;- currentLanguage: String = &#39;javascript&#39;&#xa;- syntaxErrorMarkers: List&amp;lt;IMarker&amp;gt;" vertex="1">
+          <mxGeometry height="56" width="230" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco_div" parent="c_monaco" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" value="" vertex="1">
+          <mxGeometry height="4" width="230" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="c_monaco_meths" parent="c_monaco" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ getCode(): String&#xa;+ setCode(content: String): void&#xa;+ setDiagnostics(markers: List): void&#xa;+ formatCode(): void" vertex="1">
+          <mxGeometry height="75" width="230" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;React Component&gt;&gt;&#xa;LivePreviewRenderer" vertex="1">
+          <mxGeometry height="150" width="220" x="850" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview_attrs" parent="c_preview" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- iframeRef: HTMLIFrameElement&#xa;- sandboxUrl: String&#xa;- consoleLogs: List&amp;lt;String&amp;gt;" vertex="1">
+          <mxGeometry height="56" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview_div" parent="c_preview" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" value="" vertex="1">
+          <mxGeometry height="4" width="220" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="c_preview_meths" parent="c_preview" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ compileBundle(): void&#xa;+ refreshIframe(): void&#xa;+ captureConsoleErrors(): void" vertex="1">
+          <mxGeometry height="60" width="220" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#EFF6FF;strokeColor=#2563EB;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;React Component&gt;&gt;&#xa;ContextualCheckModal" vertex="1">
+          <mxGeometry height="150" width="240" x="40" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal_attrs" parent="c_context_modal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- questionId: String&#xa;- promptText: String&#xa;- options: List&amp;lt;String&amp;gt;&#xa;- isAnswerCorrect: Boolean" vertex="1">
+          <mxGeometry height="65" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal_div" parent="c_context_modal" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#2563EB;" value="" vertex="1">
+          <mxGeometry height="4" width="240" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="c_context_modal_meths" parent="c_context_modal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ displayModal(): void&#xa;+ submitAnswer(answer: String): Boolean&#xa;+ onValidationSuccess(): void" vertex="1">
+          <mxGeometry height="51" width="240" y="99" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FDF2F8;strokeColor=#DB2777;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;React Component&gt;&gt;&#xa;MemePopupManager" vertex="1">
+          <mxGeometry height="165" width="240" x="320" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager_attrs" parent="c_meme_manager" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- activeSessionMinutes: Int&#xa;- consecutiveErrors: Int&#xa;- fatigueThreshold: Int = 25&#xa;- isMemeVisible: Boolean" vertex="1">
+          <mxGeometry height="65" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager_div" parent="c_meme_manager" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DB2777;" value="" vertex="1">
+          <mxGeometry height="4" width="240" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_manager_meths" parent="c_meme_manager" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ monitorUserActivity(): void&#xa;+ recordFailedAttempt(): void&#xa;+ triggerRandomMeme(): void&#xa;+ dismissMeme(): void" vertex="1">
+          <mxGeometry height="66" width="240" y="99" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#F5F3FF;strokeColor=#7C3AED;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;State Manager - Zustand&gt;&gt;&#xa;IDEStateManager" vertex="1">
+          <mxGeometry height="185" width="250" x="600" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store_attrs" parent="c_store" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- activeStep: Int&#xa;- codeBuffers: Map&amp;lt;String, String&amp;gt;&#xa;- validationStatus: Enum&#xa;- unlockedSteps: Set&amp;lt;Int&amp;gt;" vertex="1">
+          <mxGeometry height="65" width="250" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store_div" parent="c_store" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#7C3AED;" value="" vertex="1">
+          <mxGeometry height="4" width="250" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="c_store_meths" parent="c_store" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ setActiveStep(step: Int): void&#xa;+ updateCode(stepId: String, code: String): void&#xa;+ setValidationReport(report: Object): void&#xa;+ unlockNextStep(): void&#xa;+ resetSession(): void" vertex="1">
+          <mxGeometry height="86" width="250" y="99" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;Service&gt;&gt;&#xa;ASTValidationService" vertex="1">
+          <mxGeometry height="155" width="250" x="320" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc_attrs" parent="c_ast_svc" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- babelParser: Parser&#xa;- astRulesRegistry: Map&amp;lt;String, Rule&amp;gt;" vertex="1">
+          <mxGeometry height="45" width="250" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc_div" parent="c_ast_svc" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D97706;" value="" vertex="1">
+          <mxGeometry height="4" width="250" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ast_svc_meths" parent="c_ast_svc" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ parseToAST(code: String): ASTNode&#xa;+ verifyRequiredNodes(ast: ASTNode, rules: List): Boolean&#xa;+ executeSilentTests(code: String, spec: String): TestReport" vertex="1">
+          <mxGeometry height="76" width="250" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEF3C7;strokeColor=#D97706;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;Service&gt;&gt;&#xa;JestSandboxRunner" vertex="1">
+          <mxGeometry height="135" width="240" x="620" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox_attrs" parent="c_sandbox" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- isolatedWorker: WorkerPool&#xa;- executionTimeoutMs: Int = 3000" vertex="1">
+          <mxGeometry height="45" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox_div" parent="c_sandbox" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#D97706;" value="" vertex="1">
+          <mxGeometry height="4" width="240" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sandbox_meths" parent="c_sandbox" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ createSandboxEnv(): Sandbox&#xa;+ runTestSuite(code: String, spec: String): Report&#xa;+ terminateHangingTasks(): void" vertex="1">
+          <mxGeometry height="56" width="240" y="79" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;Mongoose Schema&gt;&gt;&#xa;ProjectStepModel" vertex="1">
+          <mxGeometry height="165" width="240" x="40" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model_attrs" parent="c_step_model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- stepId: String&#xa;- stepIndex: Int&#xa;- instructionsMarkdown: String&#xa;- starterCodeTemplate: String&#xa;- requiredASTNodes: List&amp;lt;String&amp;gt;&#xa;- requiresConceptCheck: Boolean" vertex="1">
+          <mxGeometry height="90" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model_div" parent="c_step_model" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DC2626;" value="" vertex="1">
+          <mxGeometry height="4" width="240" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_step_model_meths" parent="c_step_model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ getByStepIndex(step: Int): Promise&#xa;+ validateAgainstRules(): Boolean" vertex="1">
+          <mxGeometry height="41" width="240" y="124" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;Mongoose Schema&gt;&gt;&#xa;LearningProgressModel" vertex="1">
+          <mxGeometry height="155" width="240" x="890" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model_attrs" parent="c_progress_model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- userId: ObjectId&#xa;- projectId: ObjectId&#xa;- completedSteps: List&amp;lt;Int&amp;gt;&#xa;- currentActiveStep: Int&#xa;- earnedXP: Int" vertex="1">
+          <mxGeometry height="80" width="240" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model_div" parent="c_progress_model" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DC2626;" value="" vertex="1">
+          <mxGeometry height="4" width="240" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c_progress_model_meths" parent="c_progress_model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ markStepComplete(userId, step): Promise&#xa;+ getUserProgress(userId): Promise" vertex="1">
+          <mxGeometry height="41" width="240" y="114" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=1.5;fontColor=#0F172A;fontSize=12;" value="&lt;&lt;Mongoose Schema&gt;&gt;&#xa;MemeModel" vertex="1">
+          <mxGeometry height="130" width="220" x="890" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model_attrs" parent="c_meme_model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="- memeId: String&#xa;- imageUrl: String&#xa;- caption: String&#xa;- contextCategory: String" vertex="1">
+          <mxGeometry height="65" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model_div" parent="c_meme_model" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#DC2626;" value="" vertex="1">
+          <mxGeometry height="4" width="220" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="c_meme_model_meths" parent="c_meme_model" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontSize=10;fontColor=#334155;" value="+ getRandomByCategory(cat: String): Promise" vertex="1">
+          <mxGeometry height="31" width="220" y="99" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_0" edge="1" parent="1" source="c_workspace" style="endArrow=diamond;endFill=1;html=1;strokeColor=#1E293B;strokeWidth=1.5;startArrow=none;fontSize=10;fontColor=#475569;" target="c_instructions" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_1" edge="1" parent="1" source="c_workspace" style="endArrow=diamond;endFill=1;html=1;strokeColor=#1E293B;strokeWidth=1.5;startArrow=none;fontSize=10;fontColor=#475569;rounded=0;curved=0;" target="c_monaco" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="250" />
+              <mxPoint x="560" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cd_link_2" edge="1" parent="1" source="c_workspace" style="endArrow=diamond;endFill=1;html=1;strokeColor=#1E293B;strokeWidth=1.5;startArrow=none;fontSize=10;fontColor=#475569;rounded=0;curved=0;" target="c_preview" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="60" />
+              <mxPoint x="880" y="60" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cd_link_3" edge="1" parent="1" source="c_workspace" style="endArrow=none;html=1;strokeColor=#1E293B;strokeWidth=1.2;fontSize=10;fontColor=#475569;" target="c_context_modal" value="0..1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_4" edge="1" parent="1" source="c_workspace" style="endArrow=none;html=1;strokeColor=#1E293B;strokeWidth=1.2;fontSize=10;fontColor=#475569;rounded=0;curved=0;" target="c_meme_manager" value="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cd_link_5" edge="1" parent="1" source="c_workspace" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;rounded=0;curved=0;" target="c_store" value="uses">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="260" />
+              <mxPoint x="580" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cd_link_6" edge="1" parent="1" source="c_store" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" target="c_ast_svc" value="invokes API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_7" edge="1" parent="1" source="c_ast_svc" style="endArrow=none;html=1;strokeColor=#1E293B;strokeWidth=1.2;fontSize=10;fontColor=#475569;" target="c_sandbox" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_8" edge="1" parent="1" source="c_ast_svc" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" target="c_step_model" value="reads">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cd_link_9" edge="1" parent="1" source="c_ast_svc" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;rounded=0;curved=0;" target="c_progress_model" value="updates">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="710" />
+              <mxPoint x="910" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cd_link_10" edge="1" parent="1" source="c_meme_manager" style="endArrow=open;endFill=0;dashed=1;html=1;strokeColor=#475569;strokeWidth=1.2;fontSize=10;fontColor=#475569;" target="c_meme_model" value="queries">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="490" />
+              <mxPoint x="10" y="490" />
+              <mxPoint x="10" y="750" />
+              <mxPoint x="1170" y="750" />
+              <mxPoint x="1170" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
