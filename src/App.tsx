@@ -9,7 +9,7 @@ import { ScrollToTop } from './components/layout/ScrollToTop';
 
 // Placeholder view for modules being developed by team members
 import { ComingSoon } from './pages/ComingSoon';
-import { DashboardOverview } from './pages/DashboardOverview';
+import { LaunchpadDashboard } from './pages/LaunchpadDashboard';
 
 export function App() {
   return (
@@ -27,7 +27,7 @@ export function App() {
           <Route element={<AppShell />}>
             {/* Dashboard / Launchpad */}
             <Route index element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<DashboardOverview />} />
+            <Route path="/dashboard" element={<LaunchpadDashboard />} />
             <Route path="/launchpad" element={<Navigate to="/dashboard" replace />} />
 
             {/* Feature Modules - Handled by ComingSoon until each member connects their module */}
