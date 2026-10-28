@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
+  BellIcon,
   ChevronDownIcon,
   MenuIcon,
   UserIcon,
@@ -91,8 +92,20 @@ export function TopBar({ onOpenMenu }: TopBarProps) {
           </h1>
         </div>
 
-        {/* Right: ONLY Profile Section */}
-        <div className="relative shrink-0" ref={profileMenuRef}>
+        {/* Right: Notifications & Profile Section */}
+        <div className="flex items-center gap-3 shrink-0">
+          {/* Notification Bell */}
+          <button
+            type="button"
+            className="relative flex h-9 w-9 items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors"
+            aria-label="Notifications"
+          >
+            <BellIcon className="h-5 w-5" />
+            <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-brand ring-2 ring-white" />
+          </button>
+
+          {/* Profile Dropdown */}
+          <div className="relative shrink-0" ref={profileMenuRef}>
           <button
             type="button"
             onClick={() => setProfileDropdownOpen((prev) => !prev)}
@@ -151,6 +164,7 @@ export function TopBar({ onOpenMenu }: TopBarProps) {
               </motion.div>
             )}
           </AnimatePresence>
+          </div>
         </div>
       </div>
     </header>

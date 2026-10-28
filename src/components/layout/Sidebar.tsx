@@ -97,29 +97,18 @@ export function Sidebar({
       >
         {/* Header */}
         <div
-          className={`flex h-16 shrink-0 items-center justify-between border-b border-white/10 ${
-            collapsed ? 'lg:justify-center px-4' : 'px-5'
+          className={`flex h-16 shrink-0 items-center border-b border-white/10 ${
+            collapsed ? 'lg:justify-center px-3' : 'justify-between px-5'
           }`}
         >
+          {/* Logo is visible ONLY when sidebar is expanded */}
           {(!collapsed || mobileOpen) && (
             <Link
               to="/"
               className="flex items-center gap-2.5 font-bold tracking-tight text-white hover:opacity-90 transition-opacity"
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-white">
-                <CodeXmlIcon className="h-5 w-5" strokeWidth={2.4} />
-              </span>
-              <span className="text-lg">DevCraft</span>
-            </Link>
-          )}
-
-          {collapsed && !mobileOpen && (
-            <Link
-              to="/"
-              className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-white hover:opacity-90"
-              title="DevCraft Home"
-            >
-              <CodeXmlIcon className="h-5 w-5" strokeWidth={2.4} />
+              <CodeXmlIcon className="h-6 w-6 text-brand" strokeWidth={2.6} />
+              <span className="text-xl font-bold tracking-tight text-white">DevCraft</span>
             </Link>
           )}
 
@@ -133,21 +122,19 @@ export function Sidebar({
             <XIcon className="h-5 w-5" />
           </button>
 
-          {/* Desktop collapse button */}
+          {/* Desktop toggle button - When collapsed, this is the ONLY item at the top */}
           {!mobileOpen && (
             <button
               type="button"
               onClick={onToggleCollapse}
-              className={`hidden lg:flex h-8 w-8 items-center justify-center rounded-lg text-white/60 hover:bg-white/10 hover:text-white transition-colors ${
-                collapsed ? 'mt-2' : ''
-              }`}
+              className="hidden lg:flex h-9 w-9 items-center justify-center rounded-lg text-white/60 hover:bg-white/10 hover:text-white transition-colors"
               aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
               title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             >
               {collapsed ? (
-                <PanelLeftOpenIcon className="h-4 w-4" />
+                <PanelLeftOpenIcon className="h-5 w-5" />
               ) : (
-                <PanelLeftCloseIcon className="h-4 w-4" />
+                <PanelLeftCloseIcon className="h-5 w-5" />
               )}
             </button>
           )}
