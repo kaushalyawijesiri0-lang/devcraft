@@ -1,0 +1,150 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f7f9fc;
+  color: #0b1430;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Blueprint grids */
+.tech-grid {
+  background-image: linear-gradient(to right, rgba(59, 76, 240, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 76, 240, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(11, 21, 48, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 21, 48, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-grid-light {
+  background-image: linear-gradient(to right, rgba(11, 18, 32, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 18, 32, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-grid-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #1f5eff;
+}
+
+.meme-text {
+  font-family: Impact, 'Anton', 'Arial Black', sans-serif;
+  color: #fff;
+  -webkit-text-stroke: 2px #070e22;
+  letter-spacing: 0.02em;
+}
+
+/* Caret blinking */
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.caret,
+.caret-blink,
+.animate-caret {
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+/* Scrollbars */
+.dark-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: #25314f;
+  border-radius: 999px;
+  border: 3px solid #070e22;
+}
+
+.dark-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.code-scroll::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.code-scroll::-webkit-scrollbar-thumb {
+  background: #1e2a47;
+  border-radius: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(11, 21, 51, 0.15);
+  border-radius: 999px;
+}
+
+[contenteditable]:focus {
+  outline: none;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-enter {
+  animation: pageFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .caret,
+  .caret-blink,
+  .animate-caret,
+  .page-enter {
+    animation: none;
+  }
+}
