@@ -381,7 +381,7 @@ export function TopBar({ onOpenMenu }: TopBarProps) {
                   >
                     <div className="border-b border-line px-3 py-2">
                       <p className="text-xs font-semibold text-ink">{arenaData.fullName}</p>
-                      <p className="text-[11px] text-muted truncate">{arenaData.email || 'inusha@devcraft.io'}</p>
+                      <p className="text-[11px] text-muted truncate">{arenaData.email || 'kaushalya@devcraft.io'}</p>
                     </div>
                     <div className="pt-1">
                       <Link

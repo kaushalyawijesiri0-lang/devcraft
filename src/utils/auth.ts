@@ -7,11 +7,11 @@ export interface DevCraftUser {
 }
 
 export const DEFAULT_USER: DevCraftUser = {
-  firstName: 'Inusha',
-  fullName: 'Inusha Gunasekara',
-  initials: 'IG',
-  email: 'inusha@devcraft.io',
-  username: 'inusha',
+  firstName: 'Kaushalya',
+  fullName: 'Kaushalya Wijesiri',
+  initials: 'KW',
+  email: 'kaushalya@devcraft.io',
+  username: 'kaushalya',
 };
 
 const STORAGE_KEY = 'devcraft_user';
@@ -63,11 +63,11 @@ export function parseUserFromInput(input: string, explicitFullName?: string): De
   // If user entered "inusha" or email with inusha
   if (lower.includes('inusha')) {
     return {
-      firstName: 'Inusha',
-      fullName: 'Inusha Gunasekara',
-      initials: 'IG',
+      firstName: 'Kaushalya',
+      fullName: 'Kaushalya Wijesiri',
+      initials: 'KW',
       email: clean.includes('@') ? clean : 'inusha@devcraft.io',
-      username: 'inusha',
+      username: 'kaushalya',
     };
   }
 
