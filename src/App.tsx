@@ -1,4 +1,5 @@
 import React from 'react';
+import { MentorshipRoutes } from './modules/mentorship/MentorshipRoutes';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { MotionConfig } from 'framer-motion';
 import { Toaster } from 'sonner';
@@ -38,7 +39,7 @@ export function App() {
             <Route path="/debug-arena" element={<ComingSoon />} />
             <Route path="/blogs/*" element={<ComingSoon />} />
             <Route path="/community/*" element={<ComingSoon />} />
-            <Route path="/mentorship/*" element={<ComingSoon />} />
+            <Route path="/mentorship/*" element={<MentorshipRoutes />} />
             <Route path="/leaderboard/*" element={<ComingSoon />} />
 
             {/* Utility Pages */}
