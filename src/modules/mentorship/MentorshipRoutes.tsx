@@ -1,3 +1,4 @@
+import { AIMentor } from './pages/AIMentor';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MentorshipTabs } from './components/MentorshipTabs';
 import { Overview } from './pages/Overview';
@@ -21,10 +22,7 @@ export function MentorshipRoutes() {
       <Routes>
         <Route index element={<Overview />} />
 
-        <Route
-          path="ai-mentor"
-          element={<ComingSoon title="AI Mentor" />}
-        />
+        <Route path="ai-mentor" element={<AIMentor />} />
 
         <Route
           path="mentors"
