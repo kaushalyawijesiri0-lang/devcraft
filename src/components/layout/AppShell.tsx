@@ -23,6 +23,7 @@ export function AppShell() {
 
   const isFullWidthWorkspace = pathname.includes('/workspace') || pathname.includes('/session');
   const isMentorshipRoute = pathname.startsWith('/mentorship') || pathname.startsWith('/mentor-dashboard');
+  const isGuidedRoute = pathname.startsWith('/guided');
 
   return (
     <div className="relative min-h-screen w-full bg-canvas text-ink antialiased">
@@ -48,7 +49,7 @@ export function AppShell() {
       >
         <TopBar onOpenMenu={() => setMobileOpen(true)} />
 
-        <main className={`relative flex-1 ${isFullWidthWorkspace || isMentorshipRoute ? 'w-full' : 'mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8'}`}>
+        <main className={`relative flex-1 ${isGuidedRoute ? 'mx-auto w-full max-w-[1560px] px-4 py-6 sm:px-6 lg:px-8' : isFullWidthWorkspace || isMentorshipRoute ? 'w-full' : 'mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8'}`}>
           <div key={pathname} className="w-full page-enter">
             <Outlet />
           </div>
