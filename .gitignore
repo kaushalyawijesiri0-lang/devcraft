@@ -153,3 +153,10 @@ vite.config.ts.timestamp-*
 *.rar
 *.zip
 *.7z
+
+# SRS specifications (Markdown & HTML)
+*SRS*.md
+*srs*.md
+*SRS*.html
+*srs*.html
+
