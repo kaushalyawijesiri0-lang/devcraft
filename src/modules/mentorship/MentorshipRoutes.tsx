@@ -1,3 +1,4 @@
+import { BookSession } from './pages/BookSession';
 import { FindMentors } from './pages/FindMentors';
 import { AIMentor } from './pages/AIMentor';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -26,6 +27,8 @@ export function MentorshipRoutes() {
         <Route path="ai-mentor" element={<AIMentor />} />
 
         <Route path="mentors" element={<FindMentors />} />
+
+        <Route path="mentors/:mentorId/book" element={<BookSession />} />
 
         <Route
           path="sessions"

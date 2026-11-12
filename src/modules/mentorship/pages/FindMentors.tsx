@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { SearchIcon, UserIcon } from 'lucide-react';
 
@@ -136,6 +137,11 @@ export function FindMentors() {
                 </li>
               ))}
             </ul>
+            <Link
+                to={`/mentorship/mentors/${mentor.id}/book`}
+                className="mt-6 block rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-white hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >Book a Session
+            </Link>
           </article>
         ))}
       </div>
