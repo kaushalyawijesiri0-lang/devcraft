@@ -11,6 +11,9 @@ import { ScrollToTop } from './components/layout/ScrollToTop';
 import { ComingSoon } from './pages/ComingSoon';
 import { LaunchpadDashboard } from './pages/LaunchpadDashboard';
 
+// Feature 01: Guided Coding Workspace
+import { GuidedCatalogPage, WorkspacePage } from './modules/guided';
+
 export function App() {
   return (
     <MotionConfig reducedMotion="user">
@@ -30,10 +33,15 @@ export function App() {
             <Route path="/dashboard" element={<LaunchpadDashboard />} />
             <Route path="/launchpad" element={<Navigate to="/dashboard" replace />} />
 
-            {/* Feature Modules - Handled by ComingSoon until each member connects their module */}
+            {/* Feature 01: Guided Coding Workspace */}
+            <Route path="/guided" element={<GuidedCatalogPage />} />
+            <Route path="/guided/:projectId/workspace" element={<WorkspacePage />} />
+            <Route path="/guided/*" element={<Navigate to="/guided" replace />} />
+            <Route path="/workspace" element={<Navigate to="/guided/mern-task-manager/workspace" replace />} />
+            <Route path="/guided-workspace" element={<Navigate to="/guided" replace />} />
+
+            {/* Other Feature Modules - Handled by ComingSoon until each member connects their module */}
             <Route path="/theory-dojo/*" element={<ComingSoon />} />
-            <Route path="/guided/*" element={<ComingSoon />} />
-            <Route path="/guided-workspace" element={<ComingSoon />} />
             <Route path="/arena/*" element={<ComingSoon />} />
             <Route path="/debug-arena" element={<ComingSoon />} />
             <Route path="/blogs/*" element={<ComingSoon />} />

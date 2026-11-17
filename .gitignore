@@ -147,3 +147,16 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Design backups & archives (not added to git)
+*.fig
+*.rar
+*.zip
+*.7z
+
+# SRS specifications (Markdown & HTML)
+*SRS*.md
+*srs*.md
+*SRS*.html
+*srs*.html
+
