@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { mentors } from '../data/mentors';
 
 export function BookSession() {
+  const { mentorId } = useParams();
+  const mentor = mentors.find((item) => item.id === mentorId);
+
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [topic, setTopic] = useState('');
@@ -17,7 +22,7 @@ export function BookSession() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!date || !time || !topic.trim()) return;
+    if (!mentor || !date || !time || !topic.trim()) return;
 
     setShowPreview(true);
   }
@@ -25,8 +30,36 @@ export function BookSession() {
   const inputClass =
     'mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20';
 
+  if (!mentor) {
+    return (
+      <div className="mx-auto max-w-2xl rounded-2xl border border-line bg-white p-6">
+        <h1 className="text-2xl font-bold text-ink">
+          Mentor not found
+        </h1>
+
+        <p className="mt-2 text-muted">
+          Please choose a mentor from the mentor list.
+        </p>
+
+        <Link
+          to="/mentorship/mentors"
+          className="mt-4 inline-block font-medium text-primary hover:underline"
+        >
+          Back to Find Mentors
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-2xl space-y-6">
+      <Link
+        to="/mentorship/mentors"
+        className="inline-block text-sm font-medium text-primary hover:underline"
+      >
+        ← Back to Find Mentors
+      </Link>
+
       <div>
         <h1 className="text-3xl font-bold text-ink">
           Book a Session
@@ -40,6 +73,35 @@ export function BookSession() {
           Demo form — no real booking will be created.
         </p>
       </div>
+
+      <section className="rounded-2xl border border-line bg-white p-6 shadow-card">
+        <p className="text-sm font-medium text-muted">
+          Your selected mentor
+        </p>
+
+        <h2 className="mt-2 text-xl font-bold text-ink">
+          {mentor.name}
+        </h2>
+
+        <p className="mt-1 text-sm text-primary">
+          {mentor.role}
+        </p>
+
+        <p className="mt-3 text-sm text-muted">
+          {mentor.description}
+        </p>
+
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {mentor.skills.map((skill) => (
+            <li
+              key={skill}
+              className="rounded-full bg-primary-soft px-3 py-1 text-xs font-medium text-primary"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <form
         onSubmit={handleSubmit}
@@ -136,6 +198,13 @@ export function BookSession() {
           </h2>
 
           <dl className="mt-4 space-y-3 text-sm">
+            <div>
+              <dt className="font-medium text-ink">Mentor</dt>
+              <dd className="text-muted">
+                {mentor.name} — {mentor.role}
+              </dd>
+            </div>
+
             <div>
               <dt className="font-medium text-ink">Date</dt>
               <dd className="text-muted">{date}</dd>
