@@ -58,7 +58,7 @@ export const WorkspacePage: React.FC = () => {
   const allPassed = testResults.every((t) => t.passed) && validationStatus === 'success';
 
   return (
-    <div className="w-full space-y-5">
+    <div className="mx-auto w-full max-w-[1560px] px-4 py-6 sm:px-6 lg:px-8 space-y-5">
       {/* 1. Top Banner */}
       <WorkspaceBanner project={catalogProject} xp={currentStep.xpReward} />
 

@@ -7,11 +7,11 @@ export interface DevCraftUser {
 }
 
 export const DEFAULT_USER: DevCraftUser = {
-  firstName: 'Inusha',
-  fullName: 'Inusha Gunasekara',
-  initials: 'IG',
-  email: 'inusha@devcraft.io',
-  username: 'inusha',
+  firstName: 'Kaushalya',
+  fullName: 'Kaushalya Wijesiri',
+  initials: 'KW',
+  email: 'kaushalya@devcraft.io',
+  username: 'kaushalya',
 };
 
 const STORAGE_KEY = 'devcraft_user';
