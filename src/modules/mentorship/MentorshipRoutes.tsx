@@ -1,3 +1,4 @@
+import { MySessions } from './pages/MySessions';
 import { BookSession } from './pages/BookSession';
 import { FindMentors } from './pages/FindMentors';
 import { AIMentor } from './pages/AIMentor';
@@ -30,10 +31,7 @@ export function MentorshipRoutes() {
 
         <Route path="mentors/:mentorId/book" element={<BookSession />} />
 
-        <Route
-          path="sessions"
-          element={<ComingSoon title="My Sessions" />}
-        />
+        <Route path="sessions" element={<MySessions />} />
 
         <Route
           path="wallet"
