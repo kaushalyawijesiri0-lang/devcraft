@@ -1,11 +1,27 @@
 import { useState } from 'react';
-import { CoinsIcon, GiftIcon, ShoppingCartIcon } from 'lucide-react';
+import {
+  CoinsIcon,
+  GiftIcon,
+  MessageCircleIcon,
+  ShoppingCartIcon,
+} from 'lucide-react';
 
 type CoinPackage = {
   id: string;
   coins: number;
   price: number;
   note?: string;
+};
+
+type ActivityType = 'allocation' | 'ai' | 'purchase';
+
+type CoinActivity = {
+  id: string;
+  date: string;
+  type: ActivityType;
+  label: string;
+  coins: number;
+  description: string;
 };
 
 const walletSummary = {
@@ -34,6 +50,41 @@ const coinPackages: CoinPackage[] = [
     coins: 150,
     price: 2200,
     note: 'Best value',
+  },
+];
+
+const sampleActivity: CoinActivity[] = [
+  {
+    id: 'act-1',
+    date: '2026-11-18',
+    type: 'allocation',
+    label: 'Daily free coins',
+    coins: 15,
+    description: 'Automatic daily coin allocation',
+  },
+  {
+    id: 'act-2',
+    date: '2026-11-18',
+    type: 'ai',
+    label: 'AI Mentor query',
+    coins: -5,
+    description: 'Debugging React useEffect dependency loop',
+  },
+  {
+    id: 'act-3',
+    date: '2026-11-16',
+    type: 'purchase',
+    label: 'Coin package top-up',
+    coins: 60,
+    description: 'Purchased 60 coins via PayHere',
+  },
+  {
+    id: 'act-4',
+    date: '2026-11-15',
+    type: 'ai',
+    label: 'AI Mentor query',
+    coins: -5,
+    description: 'Explaining Express middleware error handling',
   },
 ];
 
@@ -253,6 +304,67 @@ export function CoinWallet() {
           )}
         </section>
       </div>
+
+      {/* Recent coin activity */}
+      <section className="rounded-2xl border border-line bg-white p-6 shadow-card">
+        <h2 className="text-xl font-semibold text-ink">
+          Recent coin activity
+        </h2>
+
+        <p className="mt-1 text-sm text-muted">
+          Track your daily free allocations, AI Mentor queries, and coin purchases.
+        </p>
+
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full min-w-[600px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-line text-muted">
+                <th scope="col" className="py-3 pr-4 font-semibold">Date</th>
+                <th scope="col" className="px-4 py-3 font-semibold">Type</th>
+                <th scope="col" className="px-4 py-3 font-semibold">Coins</th>
+                <th scope="col" className="py-3 pl-4 font-semibold">Description</th>
+              </tr>
+            </thead>
+
+            <tbody className="divide-y divide-line">
+              {sampleActivity.map((item) => (
+                <tr key={item.id}>
+                  <td className="py-3 pr-4 font-mono text-xs text-muted">
+                    {item.date}
+                  </td>
+
+                  <td className="px-4 py-3 font-medium text-ink">
+                    <span className="inline-flex items-center gap-2">
+                      {item.type === 'allocation' && (
+                        <GiftIcon className="h-4 w-4 text-green-600" aria-hidden="true" />
+                      )}
+                      {item.type === 'ai' && (
+                        <MessageCircleIcon className="h-4 w-4 text-primary" aria-hidden="true" />
+                      )}
+                      {item.type === 'purchase' && (
+                        <ShoppingCartIcon className="h-4 w-4 text-amber-500" aria-hidden="true" />
+                      )}
+                      {item.label}
+                    </span>
+                  </td>
+
+                  <td
+                    className={`px-4 py-3 font-mono font-semibold ${
+                      item.coins > 0 ? 'text-green-700' : 'text-red-600'
+                    }`}
+                  >
+                    {item.coins > 0 ? `+${item.coins}` : item.coins}
+                  </td>
+
+                  <td className="py-3 pl-4 text-muted">
+                    {item.description}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   );
 }
