@@ -1,3 +1,4 @@
+import { MyRewards } from './pages/MyRewards';
 import { CoinWallet } from './pages/CoinWallet';
 import { MySessions } from './pages/MySessions';
 import { BookSession } from './pages/BookSession';
@@ -38,7 +39,7 @@ export function MentorshipRoutes() {
 
         <Route
           path="rewards"
-          element={<ComingSoon title="My Rewards" />}
+          element={<MyRewards/>}
         />
 
         <Route
