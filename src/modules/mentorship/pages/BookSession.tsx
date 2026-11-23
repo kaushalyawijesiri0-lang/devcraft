@@ -1,16 +1,52 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { mentors } from '../data/mentors';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import {
+  bookMentor,
+  getMentors,
+  getRewards,
+  type Mentor,
+} from '../services/mentorshipApi';
 
 export function BookSession() {
   const { mentorId } = useParams();
-  const mentor = mentors.find((item) => item.id === mentorId);
+  const navigate = useNavigate();
+
+  const [mentor, setMentor] = useState<Mentor | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [discountPct, setDiscountPct] = useState(0);
 
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [topic, setTopic] = useState('');
-  const [showPreview, setShowPreview] = useState(false);
+  const [applyDiscount, setApplyDiscount] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+
+    Promise.all([getMentors(), getRewards()])
+      .then(([mentorData, rewardData]) => {
+        if (!active) return;
+        const found =
+          mentorData.mentors.find((item) => item.id === mentorId) ?? null;
+        setMentor(found);
+        const topReward = rewardData.availableRewards[0];
+        setDiscountPct(topReward ? topReward.discountPct : 0);
+      })
+      .catch((err: Error) => {
+        if (active) setError(err.message);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [mentorId]);
 
   const today = new Date();
   const minimumDate = [
@@ -19,16 +55,16 @@ export function BookSession() {
     String(today.getDate()).padStart(2, '0'),
   ].join('-');
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    if (!mentor || !date || !time || !topic.trim()) return;
-
-    setShowPreview(true);
-  }
-
   const inputClass =
     'mt-2 w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20';
+
+  if (loading) {
+    return (
+      <div className="mx-auto max-w-2xl rounded-2xl border border-line bg-white p-6 text-sm text-muted">
+        Loading mentor details...
+      </div>
+    );
+  }
 
   if (!mentor) {
     return (
@@ -51,6 +87,34 @@ export function BookSession() {
     );
   }
 
+  const discountAmount =
+    applyDiscount && discountPct > 0
+      ? Math.round((mentor.fee * discountPct) / 100)
+      : 0;
+  const finalFee = mentor.fee - discountAmount;
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!mentor || !date || !time || !topic.trim() || submitting) return;
+
+    setSubmitting(true);
+    setError('');
+
+    try {
+      await bookMentor({
+        mentorId: mentor.id,
+        date,
+        time,
+        topic: topic.trim(),
+        applyDiscount: applyDiscount && discountPct > 0,
+      });
+      navigate('/mentorship/sessions');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Booking failed.');
+      setSubmitting(false);
+    }
+  }
+
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <Link
@@ -68,10 +132,6 @@ export function BookSession() {
         <p className="mt-2 text-muted">
           Choose when you would like to meet and what you need help with.
         </p>
-
-        <p className="mt-3 text-sm text-primary">
-          Demo form — no real booking will be created.
-        </p>
       </div>
 
       <section className="rounded-2xl border border-line bg-white p-6 shadow-card">
@@ -84,7 +144,7 @@ export function BookSession() {
         </h2>
 
         <p className="mt-1 text-sm text-primary">
-          {mentor.role}
+          {mentor.role} · {mentor.durationMin} min · LKR {mentor.fee.toLocaleString('en-LK')}
         </p>
 
         <p className="mt-3 text-sm text-muted">
@@ -105,7 +165,6 @@ export function BookSession() {
 
       <form
         onSubmit={handleSubmit}
-        onChange={() => setShowPreview(false)}
         className="space-y-5 rounded-2xl border border-line bg-white p-6 shadow-card"
       >
         <div>
@@ -150,8 +209,7 @@ export function BookSession() {
           </select>
 
           <p className="mt-2 text-xs text-muted">
-            Sri Lanka time (Asia/Colombo). These are sample slots;
-            mentor availability is not connected yet.
+            Sri Lanka time (Asia/Colombo).
           </p>
         </div>
 
@@ -179,57 +237,46 @@ export function BookSession() {
           </p>
         </div>
 
+        {discountPct > 0 && (
+          <label className="flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 p-4 text-sm">
+            <input
+              type="checkbox"
+              checked={applyDiscount}
+              onChange={(event) => setApplyDiscount(event.target.checked)}
+              className="mt-1 h-4 w-4 accent-primary"
+            />
+            <span>
+              <span className="font-semibold text-ink">
+                Apply {discountPct}% Leaderboard Reward Discount
+              </span>
+              <span className="block text-xs text-muted">
+                Save LKR {Math.round((mentor.fee * discountPct) / 100).toLocaleString('en-LK')} on this session
+              </span>
+            </span>
+          </label>
+        )}
+
+        <div className="flex items-center justify-between rounded-xl bg-canvas px-4 py-3 text-sm">
+          <span className="font-medium text-muted">Total session fee</span>
+          <span className="text-lg font-bold text-ink">
+            LKR {finalFee.toLocaleString('en-LK')}
+          </span>
+        </div>
+
+        {error && (
+          <p role="alert" className="text-sm text-red-600">
+            {error}
+          </p>
+        )}
+
         <button
           type="submit"
-          disabled={!date || !time || !topic.trim()}
+          disabled={!date || !time || !topic.trim() || submitting}
           className="w-full rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          Preview session
+          {submitting ? 'Booking session...' : 'Confirm & Book Session'}
         </button>
       </form>
-
-      {showPreview && (
-        <section
-          role="status"
-          className="rounded-2xl border border-primary/20 bg-primary-soft p-6"
-        >
-          <h2 className="text-lg font-semibold text-ink">
-            Your session preview
-          </h2>
-
-          <dl className="mt-4 space-y-3 text-sm">
-            <div>
-              <dt className="font-medium text-ink">Mentor</dt>
-              <dd className="text-muted">
-                {mentor.name} — {mentor.role}
-              </dd>
-            </div>
-
-            <div>
-              <dt className="font-medium text-ink">Date</dt>
-              <dd className="text-muted">{date}</dd>
-            </div>
-
-            <div>
-              <dt className="font-medium text-ink">Time</dt>
-              <dd className="text-muted">
-                {time} — Asia/Colombo
-              </dd>
-            </div>
-
-            <div>
-              <dt className="font-medium text-ink">Topic</dt>
-              <dd className="whitespace-pre-wrap break-words text-muted">
-                {topic.trim()}
-              </dd>
-            </div>
-          </dl>
-
-          <p className="mt-4 text-xs text-muted">
-            Preview only. Nothing has been booked or saved.
-          </p>
-        </section>
-      )}
     </div>
   );
 }

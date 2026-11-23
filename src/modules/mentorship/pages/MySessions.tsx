@@ -1,48 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { mentors } from '../data/mentors';
-
-type SessionStatus = 'Upcoming' | 'Completed' | 'Cancelled';
-
-type Session = {
-  id: string;
-  mentorId: string;
-  topic: string;
-  date: string;
-  time: string;
-  duration: number;
-  status: SessionStatus;
-};
-
-const sampleSessions: Session[] = [
-  {
-    id: 'session-1',
-    mentorId: 'mentor-1',
-    topic: 'Building reusable React components',
-    date: '2026-12-10',
-    time: '09:00',
-    duration: 30,
-    status: 'Upcoming',
-  },
-  {
-    id: 'session-2',
-    mentorId: 'mentor-2',
-    topic: 'Creating my first Express API',
-    date: '2026-12-12',
-    time: '14:00',
-    duration: 45,
-    status: 'Upcoming',
-  },
-  {
-    id: 'session-3',
-    mentorId: 'mentor-3',
-    topic: 'Connecting frontend and backend',
-    date: '2026-11-10',
-    time: '11:00',
-    duration: 60,
-    status: 'Completed',
-  },
-];
+import {
+  getMentors,
+  getSessions,
+  type Mentor,
+  type Session,
+  type SessionStatus,
+} from '../services/mentorshipApi';
 
 const filters: Array<'All' | SessionStatus> = [
   'All',
@@ -59,10 +23,33 @@ const statusStyles: Record<SessionStatus, string> = {
 
 export function MySessions() {
   const [filter, setFilter] = useState<'All' | SessionStatus>('All');
+  const [sessions, setSessions] = useState<Session[]>([]);
+  const [mentors, setMentors] = useState<Mentor[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  const visibleSessions = sampleSessions.filter(
-    (session) => filter === 'All' || session.status === filter,
-  );
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    setError('');
+
+    Promise.all([getSessions(filter), getMentors()])
+      .then(([sessionData, mentorData]) => {
+        if (!active) return;
+        setSessions(sessionData.sessions);
+        setMentors(mentorData.mentors);
+      })
+      .catch((err: Error) => {
+        if (active) setError(err.message);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [filter]);
 
   return (
     <div className="space-y-6">
@@ -74,10 +61,6 @@ export function MySessions() {
 
           <p className="mt-2 text-muted">
             View your upcoming sessions and past mentorship activity.
-          </p>
-
-          <p className="mt-3 text-sm text-primary">
-            Demo data — these are sample sessions, not real bookings.
           </p>
         </div>
 
@@ -111,17 +94,25 @@ export function MySessions() {
         ))}
       </div>
 
+      {error && (
+        <div
+          role="alert"
+          className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+        >
+          Could not load sessions: {error}
+        </div>
+      )}
+
       <p role="status" className="text-sm text-muted">
-        {visibleSessions.length} session
-        {visibleSessions.length === 1 ? '' : 's'} shown
+        {loading
+          ? 'Loading sessions...'
+          : `${sessions.length} session${sessions.length === 1 ? '' : 's'} shown`}
       </p>
 
-      {visibleSessions.length > 0 ? (
+      {!loading && sessions.length > 0 ? (
         <div className="grid gap-4 md:grid-cols-2">
-          {visibleSessions.map((session) => {
-            const mentor = mentors.find(
-              (item) => item.id === session.mentorId,
-            );
+          {sessions.map((session) => {
+            const mentor = mentors.find((item) => item.id === session.mentorId);
 
             return (
               <article
@@ -157,9 +148,7 @@ export function MySessions() {
                 <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-line pt-4 text-sm">
                   <div>
                     <dt className="font-medium text-ink">Date</dt>
-                    <dd className="mt-1 text-muted">
-                      {session.date}
-                    </dd>
+                    <dd className="mt-1 text-muted">{session.date}</dd>
                   </div>
 
                   <div>
@@ -173,6 +162,18 @@ export function MySessions() {
                     <dt className="font-medium text-ink">Duration</dt>
                     <dd className="mt-1 text-muted">
                       {session.duration} minutes
+                    </dd>
+                  </div>
+
+                  <div>
+                    <dt className="font-medium text-ink">Fee</dt>
+                    <dd className="mt-1 text-muted">
+                      LKR {session.fee.toLocaleString('en-LK')}
+                      {session.discountApplied > 0 && (
+                        <span className="ml-1 text-xs text-green-700">
+                          (saved LKR {session.discountApplied.toLocaleString('en-LK')})
+                        </span>
+                      )}
                     </dd>
                   </div>
                 </dl>
@@ -190,24 +191,26 @@ export function MySessions() {
           })}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-line bg-white p-10 text-center">
-          <h2 className="text-lg font-semibold text-ink">
-            No {filter === 'All' ? '' : `${filter.toLowerCase()} `}
-            sessions
-          </h2>
+        !loading && (
+          <div className="rounded-2xl border border-dashed border-line bg-white p-10 text-center">
+            <h2 className="text-lg font-semibold text-ink">
+              No {filter === 'All' ? '' : `${filter.toLowerCase()} `}
+              sessions
+            </h2>
 
-          <p className="mt-2 text-sm text-muted">
-            There are no sample sessions matching this filter.
-          </p>
+            <p className="mt-2 text-sm text-muted">
+              There are no sessions matching this filter.
+            </p>
 
-          <button
-            type="button"
-            onClick={() => setFilter('All')}
-            className="mt-4 text-sm font-semibold text-primary hover:underline"
-          >
-            Show all sessions
-          </button>
-        </div>
+            <button
+              type="button"
+              onClick={() => setFilter('All')}
+              className="mt-4 text-sm font-semibold text-primary hover:underline"
+            >
+              Show all sessions
+            </button>
+          </div>
+        )
       )}
     </div>
   );
