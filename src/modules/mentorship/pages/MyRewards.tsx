@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   CircleCheckIcon,
@@ -8,54 +8,13 @@ import {
   StarIcon,
   TrophyIcon,
 } from 'lucide-react';
+import {
+  getRewards,
+  type Reward,
+  type UsedReward,
+} from '../services/mentorshipApi';
 
 type RewardFilter = 'available' | 'used' | 'expired';
-
-type Reward = {
-  id: string;
-  title: string;
-  meta: string[];
-  description: string;
-  originalPrice: number;
-  discountPct: number;
-};
-
-type UsedReward = {
-  id: string;
-  title: string;
-  usedOn: string;
-  mentor: string;
-  topic: string;
-  saved: number;
-};
-
-const rewardStats = {
-  xp: 2450,
-  rank: 12,
-};
-
-const availableRewards: Reward[] = [
-  {
-    id: 'rew-1',
-    title: '20% Off 1:1 Mentor Session',
-    meta: ['Top 15 Leaderboard Tier', 'Valid for 30-min or 60-min sessions'],
-    description:
-      'Earned by maintaining a Top 15 position on the global DevCraft XP leaderboard.',
-    originalPrice: 2500,
-    discountPct: 20,
-  },
-];
-
-const usedRewards: UsedReward[] = [
-  {
-    id: 'used-1',
-    title: '15% Off 1:1 Mentor Session',
-    usedOn: '2026-11-10',
-    mentor: 'Amaya',
-    topic: 'Connecting frontend and backend',
-    saved: 375,
-  },
-];
 
 function formatLKR(amount: number) {
   return `LKR ${amount.toLocaleString('en-LK')}`;
@@ -63,11 +22,52 @@ function formatLKR(amount: number) {
 
 export function MyRewards() {
   const [filter, setFilter] = useState<RewardFilter>('available');
+  const [xp, setXp] = useState(0);
+  const [rank, setRank] = useState(0);
+  const [availableRewards, setAvailableRewards] = useState<Reward[]>([]);
+  const [usedRewards, setUsedRewards] = useState<UsedReward[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+
+    getRewards()
+      .then((data) => {
+        if (!active) return;
+        setXp(data.xp);
+        setRank(data.rank);
+        setAvailableRewards(data.availableRewards);
+        setUsedRewards(data.usedRewards);
+      })
+      .catch((err: Error) => {
+        if (active) setError(err.message);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="rounded-2xl border border-line bg-white p-6 text-sm text-muted">
+        Loading rewards...
+      </div>
+    );
+  }
 
   const activeReward = availableRewards[0];
-  const discountAmount =
-    (activeReward.originalPrice * activeReward.discountPct) / 100;
-  const finalPrice = activeReward.originalPrice - discountAmount;
+  const discountAmount = activeReward
+    ? (activeReward.originalPrice * activeReward.discountPct) / 100
+    : 0;
+  const finalPrice = activeReward
+    ? activeReward.originalPrice - discountAmount
+    : 0;
 
   const filterTabs: Array<{ value: RewardFilter; label: string }> = [
     { value: 'available', label: `Available (${availableRewards.length})` },
@@ -86,11 +86,16 @@ export function MyRewards() {
         <p className="mt-2 text-muted">
           Turn your learning progress and leaderboard rank into mentor session discounts.
         </p>
-
-        <p className="mt-3 text-sm text-primary">
-          Demo rewards — XP, rank, and discount vouchers are sample data.
-        </p>
       </div>
+
+      {error && (
+        <div
+          role="alert"
+          className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+        >
+          {error}
+        </div>
+      )}
 
       {/* XP & Leaderboard rank summary */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,7 +108,7 @@ export function MyRewards() {
             <div>
               <p className="text-sm text-muted">Total XP</p>
               <p className="font-mono text-2xl font-bold text-ink">
-                {rewardStats.xp.toLocaleString('en-US')}
+                {xp.toLocaleString('en-US')}
               </p>
             </div>
           </div>
@@ -122,7 +127,7 @@ export function MyRewards() {
             <div>
               <p className="text-sm text-muted">Leaderboard rank</p>
               <p className="font-mono text-2xl font-bold text-ink">
-                #{rewardStats.rank}
+                #{rank}
               </p>
             </div>
           </div>
@@ -177,7 +182,7 @@ export function MyRewards() {
       </div>
 
       {/* Available rewards */}
-      {filter === 'available' && (
+      {filter === 'available' && activeReward && (
         <section className="grid gap-6 rounded-2xl border border-line bg-white p-6 shadow-card lg:grid-cols-3">
           <div className="flex items-start gap-4 lg:col-span-2">
             <span className="rounded-xl bg-primary-soft p-3 text-primary">
