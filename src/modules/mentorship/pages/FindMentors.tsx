@@ -1,25 +1,34 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SearchIcon, UserIcon } from 'lucide-react';
-
-import { mentors } from '../data/mentors';
+import { getMentors, type Mentor } from '../services/mentorshipApi';
 
 export function FindMentors() {
   const [search, setSearch] = useState('');
+  const [mentors, setMentors] = useState<Mentor[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  const searchTerm = search.trim().toLowerCase();
+  useEffect(() => {
+    let active = true;
+    setLoading(true);
+    setError('');
 
-  const filteredMentors = mentors.filter((mentor) => {
-    const searchableText = [
-      mentor.name,
-      mentor.role,
-      ...mentor.skills,
-    ]
-      .join(' ')
-      .toLowerCase();
+    getMentors(search)
+      .then((data) => {
+        if (active) setMentors(data.mentors);
+      })
+      .catch((err: Error) => {
+        if (active) setError(err.message);
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
 
-    return searchableText.includes(searchTerm);
-  });
+    return () => {
+      active = false;
+    };
+  }, [search]);
 
   return (
     <div className="space-y-6">
@@ -32,10 +41,6 @@ export function FindMentors() {
         <p className="mt-2 text-muted">
           Find guidance for your next coding challenge.
         </p>
-
-        <span className="mt-3 inline-block rounded-full bg-primary-soft px-3 py-1 text-xs font-medium text-primary">
-          Sample profiles
-        </span>
       </div>
 
       {/* Search */}
@@ -64,14 +69,24 @@ export function FindMentors() {
         </div>
       </div>
 
+      {error && (
+        <div
+          role="alert"
+          className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+        >
+          Could not load mentors from backend: {error}. Make sure `devcraft-backend` is running on port 5000.
+        </div>
+      )}
+
       <p role="status" className="text-sm text-muted">
-        {filteredMentors.length}{' '}
-        {filteredMentors.length === 1 ? 'mentor' : 'mentors'} found
+        {loading
+          ? 'Loading mentors...'
+          : `${mentors.length} ${mentors.length === 1 ? 'mentor' : 'mentors'} found`}
       </p>
 
       {/* Mentor cards */}
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {filteredMentors.map((mentor) => (
+        {mentors.map((mentor) => (
           <article
             key={mentor.id}
             className="rounded-2xl border border-line bg-white p-6 shadow-card"
@@ -99,9 +114,13 @@ export function FindMentors() {
               {mentor.description}
             </p>
 
+            <p className="mt-3 text-xs font-medium text-ink">
+              {mentor.durationMin} min · LKR {mentor.fee.toLocaleString('en-LK')}
+            </p>
+
             <ul
               aria-label={`${mentor.name}'s skills`}
-              className="mt-5 flex flex-wrap gap-2"
+              className="mt-4 flex flex-wrap gap-2"
             >
               {mentor.skills.map((skill) => (
                 <li
@@ -112,17 +131,19 @@ export function FindMentors() {
                 </li>
               ))}
             </ul>
+
             <Link
-                to={`/mentorship/mentors/${mentor.id}/book`}
-                className="mt-6 block rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-white hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >Book a Session
+              to={`/mentorship/mentors/${mentor.id}/book`}
+              className="mt-6 block rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-white hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              Book a Session
             </Link>
           </article>
         ))}
       </div>
 
       {/* Empty search result */}
-      {filteredMentors.length === 0 && (
+      {!loading && !error && mentors.length === 0 && (
         <div className="rounded-2xl border border-line bg-white p-8 text-center">
           <h2 className="font-semibold text-ink">
             No mentors found
