@@ -1,0 +1,52 @@
+import { MyRewards } from './pages/MyRewards';
+import { CoinWallet } from './pages/CoinWallet';
+import { MySessions } from './pages/MySessions';
+import { BookSession } from './pages/BookSession';
+import { FindMentors } from './pages/FindMentors';
+import { AIMentor } from './pages/AIMentor';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { MentorshipTabs } from './components/MentorshipTabs';
+import { Overview } from './pages/Overview';
+
+function ComingSoon({ title }: { title: string }) {
+  return (
+    <div className="rounded-2xl border border-line bg-white p-6">
+      <h1 className="text-2xl font-bold text-ink">{title}</h1>
+      <p className="mt-2 text-muted">
+        We’ll build this page next.
+      </p>
+    </div>
+  );
+}
+
+export function MentorshipRoutes() {
+  return (
+    <div className="mx-auto max-w-7xl px-6 py-8">
+      <MentorshipTabs />
+
+      <Routes>
+        <Route index element={<Overview />} />
+
+        <Route path="ai-mentor" element={<AIMentor />} />
+
+        <Route path="mentors" element={<FindMentors />} />
+
+        <Route path="mentors/:mentorId/book" element={<BookSession />} />
+
+        <Route path="sessions" element={<MySessions />} />
+
+        <Route path="wallet" element={<CoinWallet />} />
+
+        <Route
+          path="rewards"
+          element={<MyRewards/>}
+        />
+
+        <Route
+          path="*"
+          element={<Navigate to="/mentorship" replace />}
+        />
+      </Routes>
+    </div>
+  );
+}
