@@ -3,8 +3,11 @@ import type { FormEvent } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   bookMentor,
+  getMentorAvailability,
   getMentors,
   getRewards,
+  initiatePayment,
+  submitPayHereForm,
   type Mentor,
 } from '../services/mentorshipApi';
 
@@ -22,6 +25,39 @@ export function BookSession() {
   const [applyDiscount, setApplyDiscount] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [allSlots, setAllSlots] = useState<string[]>([
+    '09:00',
+    '11:00',
+    '14:00',
+    '16:00',
+    '19:00',
+  ]);
+  const [bookedTimes, setBookedTimes] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!mentorId || !date) {
+      setBookedTimes([]);
+      return;
+    }
+
+    let active = true;
+    getMentorAvailability(mentorId, date)
+      .then((data) => {
+        if (!active) return;
+        setAllSlots(data.allSlots);
+        setBookedTimes(data.bookedTimes);
+        if (data.bookedTimes.includes(time)) {
+          setTime('');
+        }
+      })
+      .catch(() => {
+        if (active) setBookedTimes([]);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [mentorId, date, time]);
 
   useEffect(() => {
     let active = true;
@@ -101,13 +137,26 @@ export function BookSession() {
     setError('');
 
     try {
-      await bookMentor({
+      const booked = await bookMentor({
         mentorId: mentor.id,
         date,
         time,
         topic: topic.trim(),
         applyDiscount: applyDiscount && discountPct > 0,
       });
+
+      const payment = await initiatePayment({
+        type: 'mentor_booking',
+        sessionId: booked.session.id,
+        amount: booked.session.fee,
+        itemTitle: `1:1 Mentorship with ${mentor.name}`,
+      });
+
+      if (payment.mode === 'payhere') {
+        submitPayHereForm(payment.checkoutUrl, payment.payload);
+        return;
+      }
+
       navigate('/mentorship/sessions');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Booking failed.');
@@ -202,10 +251,19 @@ export function BookSession() {
             className={inputClass}
           >
             <option value="">Select a time</option>
-            <option value="09:00">9:00 AM</option>
-            <option value="11:00">11:00 AM</option>
-            <option value="14:00">2:00 PM</option>
-            <option value="16:00">4:00 PM</option>
+            {allSlots.map((slot) => {
+              const isBooked = bookedTimes.includes(slot);
+              const [hourStr, minuteStr] = slot.split(':');
+              const hourNum = Number(hourStr);
+              const period = hourNum >= 12 ? 'PM' : 'AM';
+              const displayHour = hourNum % 12 || 12;
+              const label = `${displayHour}:${minuteStr} ${period}`;
+              return (
+                <option key={slot} value={slot} disabled={isBooked}>
+                  {label}{isBooked ? ' (Booked)' : ''}
+                </option>
+              );
+            })}
           </select>
 
           <p className="mt-2 text-xs text-muted">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
+  cancelSession,
   getMentors,
   getSessions,
   type Mentor,
@@ -27,6 +28,24 @@ export function MySessions() {
   const [mentors, setMentors] = useState<Mentor[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [cancellingId, setCancellingId] = useState<string | null>(null);
+
+  async function handleCancelSession(sessionId: string) {
+    setCancellingId(sessionId);
+    setError('');
+    try {
+      const data = await cancelSession(sessionId);
+      setSessions((prev) =>
+        prev
+          .map((item) => (item.id === sessionId ? data.session : item))
+          .filter((item) => filter === 'All' || item.status === filter),
+      );
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to cancel session.');
+    } finally {
+      setCancellingId(null);
+    }
+  }
 
   useEffect(() => {
     let active = true;
@@ -177,6 +196,19 @@ export function MySessions() {
                     </dd>
                   </div>
                 </dl>
+
+                {session.status === 'Upcoming' && (
+                  <div className="mt-5 flex items-center justify-end">
+                    <button
+                      type="button"
+                      disabled={cancellingId === session.id}
+                      onClick={() => handleCancelSession(session.id)}
+                      className="rounded-xl border border-red-200 bg-red-50 px-3.5 py-2 text-xs font-semibold text-red-700 hover:bg-red-100 disabled:opacity-50"
+                    >
+                      {cancellingId === session.id ? 'Cancelling...' : 'Cancel session'}
+                    </button>
+                  </div>
+                )}
 
                 {mentor && session.status === 'Completed' && (
                   <Link

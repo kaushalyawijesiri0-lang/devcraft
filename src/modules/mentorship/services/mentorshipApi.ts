@@ -406,7 +406,109 @@ export function getRewards() {
   return request<{
     xp: number;
     rank: number;
+    tierDiscountPct?: number;
     availableRewards: Reward[];
     usedRewards: UsedReward[];
-  }>('/rewards', undefined, () => fallbackRewards);
+  }>('/rewards', undefined, () => ({ ...fallbackRewards, tierDiscountPct: 20 }));
+}
+
+export function getMentorAvailability(mentorId: string, date: string) {
+  return request<{
+    mentorId: string;
+    date: string;
+    allSlots: string[];
+    bookedTimes: string[];
+    availableSlots: string[];
+  }>(
+    `/mentors/${encodeURIComponent(mentorId)}/availability?date=${encodeURIComponent(date)}`,
+    undefined,
+    () => {
+      const allSlots = ['09:00', '11:00', '14:00', '16:00', '19:00'];
+      const bookedTimes = fallbackSessions
+        .filter(
+          (s) =>
+            s.mentorId === mentorId &&
+            s.date === date &&
+            s.status !== 'Cancelled',
+        )
+        .map((s) => s.time);
+      return {
+        mentorId,
+        date,
+        allSlots,
+        bookedTimes,
+        availableSlots: allSlots.filter((slot) => !bookedTimes.includes(slot)),
+      };
+    },
+  );
+}
+
+export function cancelSession(sessionId: string) {
+  return request<{ message: string; session: Session }>(
+    `/sessions/${encodeURIComponent(sessionId)}/cancel`,
+    { method: 'PATCH' },
+    () => {
+      const found = fallbackSessions.find((s) => s.id === sessionId);
+      if (!found) {
+        throw new Error('Session not found.');
+      }
+      found.status = 'Cancelled';
+      return { message: 'Session cancelled.', session: found };
+    },
+  );
+}
+
+export type PayHereInitiateResponse =
+  | {
+      mode: 'payhere';
+      checkoutUrl: string;
+      payload: Record<string, string>;
+    }
+  | {
+      mode: 'demo';
+      orderId: string;
+      amount: number;
+      message: string;
+    };
+
+export function initiatePayment(payload: {
+  type: 'coin_topup' | 'mentor_booking';
+  packageId?: string;
+  sessionId?: string;
+  amount: number;
+  itemTitle: string;
+}) {
+  return request<PayHereInitiateResponse>(
+    '/payment/initiate',
+    {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    },
+    () => ({
+      mode: 'demo',
+      orderId: `DEMO-${Date.now()}`,
+      amount: payload.amount,
+      message: 'Frontend demo mode — completing instant checkout.',
+    }),
+  );
+}
+
+export function submitPayHereForm(
+  checkoutUrl: string,
+  payload: Record<string, string>,
+) {
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = checkoutUrl;
+
+  Object.entries(payload).forEach(([key, value]) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = value;
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
 }

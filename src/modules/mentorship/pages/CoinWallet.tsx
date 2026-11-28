@@ -7,6 +7,8 @@ import {
 } from 'lucide-react';
 import {
   getWallet,
+  initiatePayment,
+  submitPayHereForm,
   topUpWallet,
   type CoinActivity,
   type CoinPackage,
@@ -69,6 +71,18 @@ export function CoinWallet() {
     setError('');
 
     try {
+      const payment = await initiatePayment({
+        type: 'coin_topup',
+        packageId: selectedPackage.id,
+        amount: selectedPackage.price,
+        itemTitle: `${selectedPackage.coins} DevCraft AI Coins`,
+      });
+
+      if (payment.mode === 'payhere') {
+        submitPayHereForm(payment.checkoutUrl, payment.payload);
+        return;
+      }
+
       const data = await topUpWallet(selectedPackage.id);
       setWallet(data.wallet);
       setActivity(data.activity);
